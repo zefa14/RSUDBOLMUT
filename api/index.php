@@ -11,7 +11,7 @@ if (!is_dir('/tmp/storage')) {
     mkdir('/tmp/storage/framework/sessions', 0777, true);
 }
 
-$app->useBootstrapPath($_ENV['APP_BOOTSTRAP_CACHE'] ?? '/tmp/bootstrap/cache');
+$app->useBootstrapPath($_ENV['APP_BOOTSTRAP_PATH'] ?? '/tmp/bootstrap');
 if (!is_dir('/tmp/bootstrap/cache')) {
     mkdir('/tmp/bootstrap/cache', 0777, true);
 }

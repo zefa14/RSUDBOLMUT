@@ -10,9 +10,9 @@ return new class extends Migration
     {
         Schema::table('departments', function (Blueprint $table) {
             $table->string('code')->nullable()->after('name');
-            $table->string('location')->nullable()->after('code');
-            $table->text('description')->nullable()->after('location');
-            $table->string('status')->default('aktif')->after('description');
+            $table->string('location')->nullable();
+            $table->text('description')->nullable();
+            $table->string('status')->default('aktif');
         });
     }
 

@@ -516,53 +516,13 @@
                 <p class="text-muted mx-auto mt-3" style="max-width: 600px;">Dapatkan informasi kesehatan terbaru, jadwal pelayanan, dan kegiatan rumah sakit langsung dari genggaman Anda.</p>
             </div>
             
-            <!-- Static Instagram Feed -->
-            <div class="row g-2 mt-4">
-                @php
-                    $igPosts = [
-                        ['type' => 'image', 'src' => 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=600&auto=format&fit=crop', 'likes' => 124, 'comments' => 12],
-                        ['type' => 'text', 'title' => 'JANGAN LUPA DI VOTE !!!', 'subtitle' => 'RUANGAN INSTALASI FARMASI', 'likes' => 89, 'comments' => 5],
-                        ['type' => 'image', 'src' => 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=600&auto=format&fit=crop', 'likes' => 256, 'comments' => 34],
-                        ['type' => 'text', 'title' => 'JANGAN LUPA DI VOTE !!!', 'subtitle' => 'RUANGAN UGD', 'likes' => 112, 'comments' => 8],
-                        ['type' => 'image', 'src' => 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=600&auto=format&fit=crop', 'likes' => 175, 'comments' => 19],
-                        ['type' => 'text', 'title' => 'JANGAN LUPA DI VOTE !!!', 'subtitle' => 'RUANGAN RADIOLOGI', 'likes' => 94, 'comments' => 7],
-                    ];
-                @endphp
-
-                @foreach($igPosts as $post)
-                <div class="col-6 col-md-4 col-lg-2">
-                    <a href="{{ $settings['social_instagram'] ?? 'https://instagram.com/officialrsudbolmongutara' }}" target="_blank" class="ig-post-card d-block position-relative overflow-hidden shadow-sm" style="border-radius: 12px; aspect-ratio: 1/1; background: {{ $post['type'] == 'text' ? '#115e59' : '#fff' }}; text-decoration: none; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'; this.querySelector('.ig-overlay').style.opacity='1';" onmouseout="this.style.transform='scale(1)'; this.querySelector('.ig-overlay').style.opacity='0';">
-                        @if($post['type'] == 'image')
-                            <img src="{{ $post['src'] }}" alt="Instagram Post" style="width: 100%; height: 100%; object-fit: cover;">
-                        @else
-                            <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-3" style="color: white; background: linear-gradient(135deg, #0d9488, #0f766e);">
-                                <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
-                                    <img src="{{ asset('img/logo-rsud.jpg') }}" alt="Logo" style="width: 25px; height: 25px; border-radius: 50%;">
-                                </div>
-                                <span style="font-size: 0.85rem; font-weight: 700; line-height: 1.2; text-transform: uppercase;">{{ $post['title'] }}</span>
-                                <span style="font-size: 0.7rem; opacity: 0.9; margin-top: 8px; font-weight: 500;">{{ $post['subtitle'] }}</span>
-                            </div>
-                        @endif
-                        
-                        <!-- Hover Overlay -->
-                        <div class="ig-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.6); opacity: 0; transition: all 0.3s ease;">
-                            <div class="text-white d-flex gap-3 fw-bold fs-6">
-                                <span><i class="bi bi-heart-fill me-1 text-danger"></i> {{ $post['likes'] }}</span>
-                                <span><i class="bi bi-chat-fill me-1"></i> {{ $post['comments'] }}</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                @endforeach
-            </div>
-
-            <div class="text-center mt-5">
-                <a href="{{ $settings['social_instagram'] ?? 'https://instagram.com/officialrsudbolmongutara' }}" target="_blank" class="btn btn-primary rounded-pill px-4 py-2" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border: none; font-weight: 600; box-shadow: 0 10px 20px rgba(220, 39, 67, 0.3);">
-                    <i class="bi bi-instagram me-2"></i> Kunjungi Instagram Kami
-                </a>
-            </div>
+            <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+            <script src="https://elfsightcdn.com/platform.js" async></script>
+            <div class="elfsight-app-b712f345-8273-42a6-a405-bf076ce11fbd"></div>
+            
         </div>
     </section>
+
 
     <!-- Location / Map Section -->
     <section class="bg-light py-5">

@@ -529,6 +529,17 @@
                     filterJadwal();
                 });
             });
+
+            // Handle URL parameters from Homepage search widget
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchParam = urlParams.get('search');
+            const poliParam = urlParams.get('poli');
+            
+            if(searchParam || poliParam) {
+                currentSearch = ((searchParam || '') + " " + (poliParam || '')).trim().toLowerCase();
+                if(searchInput) searchInput.value = currentSearch;
+                filterJadwal();
+            }
         });
 
         // Pengaduan Form AJAX Submit

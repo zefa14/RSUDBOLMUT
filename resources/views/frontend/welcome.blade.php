@@ -636,28 +636,17 @@
 
             if (mainSearchBtn) {
                 mainSearchBtn.addEventListener('click', function() {
-                    let query = (mainSearchInput.value.trim() + " " + mainSearchSelect.value).trim();
+                    let searchVal = mainSearchInput.value.trim();
+                    let poliVal = mainSearchSelect.value;
+                    let url = "{{ route('frontend.jadwal') }}";
+                    let params = new URLSearchParams();
+                    if(searchVal) params.append('search', searchVal);
+                    if(poliVal) params.append('poli', poliVal);
                     
-                    const targetJadwal = document.getElementById('jadwal');
-                    if(targetJadwal) {
-                        // Scroll offset to handle sticky navbar
-                        const offset = 80;
-                        const bodyRect = document.body.getBoundingClientRect().top;
-                        const elementRect = targetJadwal.getBoundingClientRect().top;
-                        const elementPosition = elementRect - bodyRect;
-                        const offsetPosition = elementPosition - offset;
-                        
-                        window.scrollTo({
-                             top: offsetPosition,
-                             behavior: "smooth"
-                        });
-                        
-                        if(searchInput) {
-                            searchInput.value = query;
-                            // Trigger filter
-                            const event = new Event('input', { bubbles: true });
-                            searchInput.dispatchEvent(event);
-                        }
+                    if(params.toString()) {
+                        window.location.href = url + "?" + params.toString();
+                    } else {
+                        window.location.href = url;
                     }
                 });
             }

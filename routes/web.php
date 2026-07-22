@@ -15,16 +15,19 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChatbotController;
+use App\Http\Controllers\FrontendController;
 
 use App\Http\Controllers\DashboardController;
 
 // Public Frontend Routes
-Route::get('/', [App\Http\Controllers\FrontendController::class, 'index'])->name('home');
+Route::get('/', [FrontendController::class, 'index'])->name('frontend.home');
 Route::get('/daftar-online', [App\Http\Controllers\FrontendController::class, 'registerForm'])->name('frontend.register');
 Route::post('/daftar-online', [App\Http\Controllers\FrontendController::class, 'submitRegistration'])->name('frontend.register.submit');
-Route::get('/tim-dokter', [App\Http\Controllers\FrontendController::class, 'doctors'])->name('frontend.doctors');
-Route::get('/jadwal', [App\Http\Controllers\FrontendController::class, 'jadwal'])->name('frontend.jadwal');
-Route::get('/tentang', [App\Http\Controllers\FrontendController::class, 'about'])->name('frontend.about');
+Route::get('/jadwal', [FrontendController::class, 'jadwal'])->name('frontend.jadwal');
+Route::get('/pengaduan', [FrontendController::class, 'pengaduan'])->name('frontend.pengaduan');
+Route::get('/tentang', [FrontendController::class, 'about'])->name('frontend.about');
+Route::get('/galeri', [FrontendController::class, 'galeri'])->name('frontend.galeri');
+Route::get('/tim-dokter', [FrontendController::class, 'doctors'])->name('frontend.doctors');
 Route::get('/get-doctors/{department_id}', [App\Http\Controllers\FrontendController::class, 'getDoctors']);
 Route::post('/pengaduan', [App\Http\Controllers\ComplaintController::class, 'store'])->name('complaints.store');
 Route::post('/chatbot', [ChatbotController::class, 'handle'])->name('chatbot.handle');

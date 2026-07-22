@@ -247,7 +247,7 @@
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#hero-top">Beranda</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('frontend.about') }}">Tentang</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('frontend.galeri') }}">Galeri</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#layanan">Layanan</a></li>
                     <li class="nav-item"><a class="nav-link active" href="{{ route('frontend.jadwal') }}">Jadwal</a></li>
                     <li class="nav-item dropdown">
@@ -265,7 +265,7 @@
                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalTarif">Tarif Rumah Sakit <i class="bi bi-cash-stack"></i></a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#pengaduan">Pengaduan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('frontend.pengaduan') }}">Pengaduan</a></li>
                 </ul>
                 <div class="d-flex gap-2 align-items-center">
                     <a href="{{ route('login') }}" class="btn btn-portal" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); box-shadow: none;"><i class="bi bi-box-arrow-in-right me-1"></i> Log In</a>
@@ -387,7 +387,7 @@
                         <a href="{{ route('frontend.register') }}">Pendaftaran Mandiri</a>
                         <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalSPO">Panduan Rawat Inap</a>
                         <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalTarif">Tarif Layanan BPJS</a>
-                        <a href="{{ url('/') }}#pengaduan">Saran & Pengaduan</a>
+                        <a href="{{ route('frontend.pengaduan') }}">Saran & Pengaduan</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4">

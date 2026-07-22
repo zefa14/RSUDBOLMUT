@@ -46,7 +46,7 @@
 
         ::selection { background: var(--primary-light); color: var(--primary-dark); }
 
-        /* ─── NAVBAR ─── */
+        /* â”€â”€â”€ NAVBAR â”€â”€â”€ */
         .navbar-glass {
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(20px);
@@ -90,7 +90,7 @@
         }
         .btn-portal:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(13, 148, 136, 0.4); color: white; background: var(--primary-dark); }
 
-        /* ─── HERO ─── */
+        /* â”€â”€â”€ HERO â”€â”€â”€ */
         .hero-section {
             position: relative;
             padding: 200px 0 160px;
@@ -118,7 +118,7 @@
         .wave-bottom svg { position: relative; display: block; width: calc(100% + 1.3px); height: 70px; }
         .wave-bottom .shape-fill { fill: var(--light); }
 
-        /* ─── QUICK LINKS ─── */
+        /* â”€â”€â”€ QUICK LINKS â”€â”€â”€ */
         .quick-link-card {
             background: white; border-radius: var(--radius-lg); padding: 32px 24px; text-align: center; height: 100%;
             box-shadow: var(--shadow-sm); transition: all 0.35s ease;
@@ -136,7 +136,7 @@
         .quick-link-card h4 { font-weight: 700; color: var(--dark); font-size: 1.05rem; margin-bottom: 6px; }
         .quick-link-card p { color: var(--text-gray); margin: 0; font-size: 0.85rem; }
 
-        /* ─── SECTIONS ─── */
+        /* â”€â”€â”€ SECTIONS â”€â”€â”€ */
         .section-header { text-align: center; margin-bottom: 50px; }
         .section-subtitle { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 10px; display: block; }
         .section-title { font-weight: 800; font-size: 2.4rem; color: var(--dark); letter-spacing: -0.5px; }
@@ -145,7 +145,7 @@
         .img-overlap { border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); position: relative; z-index: 2; width: 100%; border: 8px solid white; }
         .decor-box { position: absolute; top: -15px; right: 10px; width: 100%; height: 100%; border: 2px dashed var(--primary); border-radius: var(--radius-lg); z-index: 1; opacity: 0.4; }
 
-        /* ─── BED ─── */
+        /* â”€â”€â”€ BED â”€â”€â”€ */
         .bed-section { padding: 90px 0; background: var(--dark); position: relative; overflow: hidden; }
         .bed-section::before { content: ''; position: absolute; width: 100%; height: 100%; background: radial-gradient(circle at 20% 50%, rgba(13,148,136,0.08) 0%, transparent 50%); }
         .bed-card {
@@ -157,7 +157,7 @@
         .glow-green { box-shadow: 0 0 20px rgba(13, 148, 136, 0.15); border-color: rgba(13, 148, 136, 0.25); }
         .glow-red { box-shadow: 0 0 20px rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.25); }
 
-        /* ─── DOCTORS ─── */
+        /* â”€â”€â”€ DOCTORS â”€â”€â”€ */
         .doctor-card {
             background: white; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border);
             box-shadow: var(--shadow-sm); transition: 0.35s;
@@ -170,7 +170,7 @@
         .doctor-info h5 { font-weight: 700; color: var(--dark); margin-bottom: 4px; font-size: 1rem; }
         .dept-badge { background: var(--primary-light); color: var(--primary-dark); font-weight: 600; font-size: 0.72rem; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
 
-        /* ─── SEARCH & FILTER ─── */
+        /* â”€â”€â”€ SEARCH & FILTER â”€â”€â”€ */
         .search-widget { background: white; border-radius: var(--radius); padding: 12px; box-shadow: var(--shadow-lg); margin-top: -40px; position: relative; z-index: 10; display: flex; gap: 8px; border: 1px solid var(--border); }
         .search-widget select, .search-widget input { border: 1px solid #e2e8f0; background: var(--light); border-radius: 12px; padding: 14px 18px; font-weight: 500; width: 100%; outline: none; transition: 0.2s; font-size: 0.9rem; }
         .search-widget select:focus, .search-widget input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(13,148,136,0.1); }
@@ -184,7 +184,7 @@
         .timeline-step i { font-size: 1.8rem; color: var(--primary); margin-bottom: 4px; }
         .timeline-step span { font-weight: 700; font-size: 0.78rem; color: var(--dark); line-height: 1.2; }
 
-        /* ─── ARTICLES ─── */
+        /* â”€â”€â”€ ARTICLES â”€â”€â”€ */
         .article-card { background: white; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: 0.35s; height: 100%; display: flex; flex-direction: column; }
         .article-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
         .article-img { width: 100%; height: 200px; object-fit: cover; }
@@ -194,14 +194,14 @@
         .article-link { color: var(--primary); font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 5px; margin-top: auto; font-size: 0.9rem; }
         .article-link:hover { gap: 10px; }
 
-        /* ─── PARTNERS ─── */
+        /* â”€â”€â”€ PARTNERS â”€â”€â”€ */
         .partner-scroll { overflow: hidden; white-space: nowrap; padding: 35px 0; border-top: 1px solid var(--border); background: white; }
         .partner-scroll-inner { display: inline-block; animation: scroll 25s linear infinite; }
         .partner-scroll h5 { display: inline; margin: 0 40px; font-weight: 700; color: #cbd5e1; font-size: 1rem; transition: 0.3s; }
         .partner-scroll h5:hover { color: var(--primary); }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* ─── FOOTER ─── */
+        /* â”€â”€â”€ FOOTER â”€â”€â”€ */
         footer { background: var(--dark); padding: 70px 0 25px; color: rgba(255,255,255,0.7); }
         .footer-logo { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.4rem; color: white; }
         .footer-logo i { color: var(--primary); }
@@ -213,7 +213,7 @@
         .social-btn:hover { background: var(--primary); color: white; transform: translateY(-2px); border-color: var(--primary); }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); margin-top: 40px; padding-top: 20px; text-align: center; color: rgba(255,255,255,0.35); font-size: 0.85rem; font-weight: 500; }
 
-        /* ─── RESPONSIVE ─── */
+        /* â”€â”€â”€ RESPONSIVE â”€â”€â”€ */
         @media (max-width: 768px) {
             .hero-title { font-size: 2.4rem; letter-spacing: -1px; }
             .hero-text { font-size: 1rem; }
@@ -265,7 +265,7 @@
                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalTarif">Tarif Rumah Sakit <i class="bi bi-cash-stack"></i></a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('frontend.pengaduan') }}">Pengaduan</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ route('frontend.pengaduan') }}">Pengaduan</a></li>
                 </ul>
                 <div class="d-flex gap-2 align-items-center">
                     <a href="{{ route('login') }}" class="btn btn-portal" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); box-shadow: none;"><i class="bi bi-box-arrow-in-right me-1"></i> Log In</a>
@@ -275,34 +275,72 @@
         </div>
     </nav>
 
-    <!-- Tim Dokter Spesialis -->
-    <section id="tim-dokter" class="welcome-section" style="background: white; padding-top: 140px;">
+    <!-- Pengaduan Masyarakat -->
+    <section id="pengaduan" class="welcome-section position-relative" style="background: linear-gradient(135deg, var(--dark) 0%, #1e3a5f 100%); color: white; padding-top: 140px; padding-bottom: 140px;">
         <div class="container" data-aos="fade-up">
-            <div class="section-header text-center">
-                <span class="section-subtitle">Tenaga Medis Kami</span>
-                <h2 class="section-title">Tim Dokter Spesialis</h2>
-                <p class="text-muted mx-auto mt-3" style="max-width: 600px;">RSUD kami didukung oleh puluhan dokter spesialis dan subspesialis berkompeten di bidangnya yang siap memberikan pelayanan prima untuk Anda.</p>
-            </div>
-            
-            <div class="row g-4">
-                @forelse($doctors as $doctor)
-                <div class="col-lg-3 col-md-6">
-                    <div class="doctor-card">
-                        <div class="doctor-img-box">
-                            <img src="https://ui-avatars.com/api/?name={{ urlencode($doctor->name) }}&background=0284c7&color=fff&size=200" alt="{{ $doctor->name }}">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <span style="color: #5eead4; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Layanan Pengaduan</span>
+                    <h2 class="fw-bold mt-2 mb-4" style="font-family: 'Outfit', sans-serif; font-size: 2.4rem; color: white;">Suara Anda, <br>Perbaikan Kami</h2>
+                    <p style="color: rgba(255,255,255,0.6); line-height: 1.8; font-size: 1rem;">Kami sangat menghargai masukan, kritik, dan saran dari masyarakat. Sampaikan pengaduan Anda dan kami akan merespon dalam waktu 1×24 jam kerja.</p>
+                    <div class="d-flex flex-column gap-3 mt-4">
+                        <div class="d-flex align-items-center gap-3">
+                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(94, 234, 212, 0.15); display: flex; align-items: center; justify-content: center;"><i class="bi bi-shield-check" style="color: #5eead4; font-size: 1.2rem;"></i></div>
+                            <span style="color: rgba(255,255,255,0.8); font-weight: 500;">Dijamin kerahasiaannya</span>
                         </div>
-                        <div class="doctor-info">
-                            <span class="dept-badge">{{ $doctor->department->name ?? 'Poli Umum' }}</span>
-                            <h5 style="font-size: 1.1rem;">{{ $doctor->name }}</h5>
+                        <div class="d-flex align-items-center gap-3">
+                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(94, 234, 212, 0.15); display: flex; align-items: center; justify-content: center;"><i class="bi bi-clock-history" style="color: #5eead4; font-size: 1.2rem;"></i></div>
+                            <span style="color: rgba(255,255,255,0.8); font-weight: 500;">Respon dalam 1×24 jam kerja</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(94, 234, 212, 0.15); display: flex; align-items: center; justify-content: center;"><i class="bi bi-graph-up-arrow" style="color: #5eead4; font-size: 1.2rem;"></i></div>
+                            <span style="color: rgba(255,255,255,0.8); font-weight: 500;">Tindak lanjut transparan</span>
                         </div>
                     </div>
                 </div>
-                @empty
-                <div class="col-12 text-center text-muted py-4">Data dokter belum tersedia.</div>
-                @endforelse
+                <div class="col-lg-6 offset-lg-1">
+                    <div style="background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 36px;">
+                        <h5 class="fw-bold mb-4" style="color: white;">Kirim Pengaduan</h5>
+                        <div id="pengaduanSuccess" style="display:none;" class="alert border-0 mb-4" role="alert" style="background: rgba(45,212,191,0.15); color: #5eead4; border-radius: 14px;">
+                            <i class="bi bi-check-circle-fill me-2"></i> <strong>Berhasil!</strong> Pengaduan Anda telah kami terima dan akan segera ditindaklanjuti.
+                        </div>
+                        <form id="formPengaduan">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <div class="mb-3">
+                                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" required style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
+                            </div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <input type="email" name="email" class="form-control" placeholder="Email" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" name="phone" class="form-control" placeholder="No. Telepon" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <select name="category" class="form-select" required style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
+                                    <option value="" style="color: #333;">Kategori Pengaduan</option>
+                                    <option value="Pelayanan Medis" style="color: #333;">Pelayanan Medis</option>
+                                    <option value="Fasilitas & Sarana" style="color: #333;">Fasilitas & Sarana</option>
+                                    <option value="Administrasi" style="color: #333;">Administrasi</option>
+                                    <option value="Lainnya" style="color: #333;">Lainnya</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <textarea name="message" class="form-control" rows="4" placeholder="Isi pengaduan Anda secara detail..." required style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;"></textarea>
+                            </div>
+                            <div id="pengaduanError" style="display:none;" class="alert alert-danger border-0 mb-3" style="border-radius: 12px;"></div>
+                            <button type="submit" id="btnKirimPengaduan" class="btn w-100 fw-bold py-3" style="background: linear-gradient(135deg, #0d9488, #2dd4bf); color: white; border: none; border-radius: 12px; font-size: 1rem;">
+                                <i class="bi bi-send me-2"></i> Kirim Pengaduan
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+
 
     <!-- Premium Footer -->
     <footer id="kontak">
@@ -540,7 +578,7 @@
                 <div class="modal-header border-0" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0d9488 100%); padding: 28px 32px;">
                     <div>
                         <h5 class="modal-title text-white fw-bold mb-1" id="modalStrukturLabel"><i class="bi bi-diagram-3-fill me-2"></i>Struktur Organisasi</h5>
-                        <p class="text-white-50 mb-0 small">BLUD UPTD RSUD Bolaang Mongondow Utara — Tahun 2026</p>
+                        <p class="text-white-50 mb-0 small">BLUD UPTD RSUD Bolaang Mongondow Utara â€” Tahun 2026</p>
                     </div>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>

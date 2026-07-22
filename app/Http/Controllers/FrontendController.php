@@ -41,6 +41,16 @@ class FrontendController extends Controller
     }
 
     /**
+     * Menampilkan halaman Galeri Khusus
+     */
+    public function galeri()
+    {
+        $settings = json_decode(\Illuminate\Support\Facades\Storage::get('settings.json') ?? '{}', true);
+        
+        return view('frontend.galeri', compact('settings'));
+    }
+
+    /**
      * Menampilkan halaman khusus Jadwal Poliklinik
      */
     public function jadwal()
@@ -52,6 +62,16 @@ class FrontendController extends Controller
         $settings = json_decode(\Illuminate\Support\Facades\Storage::get('settings.json') ?? '{}', true);
 
         return view('frontend.jadwal', compact('doctors', 'settings'));
+    }
+
+    /**
+     * Menampilkan halaman khusus Pengaduan
+     */
+    public function pengaduan()
+    {
+        $settings = json_decode(\Illuminate\Support\Facades\Storage::get('settings.json') ?? '{}', true);
+
+        return view('frontend.pengaduan', compact('settings'));
     }
 
     /**

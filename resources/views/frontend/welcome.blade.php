@@ -146,16 +146,16 @@
         .decor-box { position: absolute; top: -15px; right: 10px; width: 100%; height: 100%; border: 2px dashed var(--primary); border-radius: var(--radius-lg); z-index: 1; opacity: 0.4; }
 
         /* ─── BED ─── */
-        .bed-section { padding: 90px 0; background: var(--dark); position: relative; overflow: hidden; }
-        .bed-section::before { content: ''; position: absolute; width: 100%; height: 100%; background: radial-gradient(circle at 20% 50%, rgba(13,148,136,0.08) 0%, transparent 50%); }
+        .bed-section { padding: 90px 0; background-size: cover; background-position: center; background-attachment: fixed; position: relative; overflow: hidden; }
+        .bed-section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.88); }
         .bed-card {
-            background: rgba(255,255,255,0.04); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);
             border-radius: var(--radius); padding: 28px 20px; text-align: center; transition: 0.3s;
         }
-        .bed-card:hover { transform: translateY(-6px); background: rgba(255,255,255,0.08); }
+        .bed-card:hover { transform: translateY(-6px); background: rgba(255,255,255,0.12); }
         .bed-number { font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, #fff 0%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; margin: 12px 0; }
-        .glow-green { box-shadow: 0 0 20px rgba(13, 148, 136, 0.15); border-color: rgba(13, 148, 136, 0.25); }
-        .glow-red { box-shadow: 0 0 20px rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.25); }
+        .glow-green { box-shadow: 0 0 25px rgba(13, 148, 136, 0.15); border-color: rgba(13, 148, 136, 0.3); }
+        .glow-red { box-shadow: 0 0 25px rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.3); }
 
         /* ─── DOCTORS ─── */
         .doctor-card {
@@ -247,7 +247,7 @@
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#hero-top">Beranda</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('frontend.about') }}">Tentang</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('frontend.galeri') }}">Galeri</a></li>
                     <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('frontend.jadwal') }}">Jadwal</a></li>
                     <li class="nav-item dropdown">
@@ -265,7 +265,7 @@
                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalTarif">Tarif Rumah Sakit <i class="bi bi-cash-stack"></i></a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#pengaduan">Pengaduan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('frontend.pengaduan') }}">Pengaduan</a></li>
                 </ul>
                 <div class="d-flex gap-2 align-items-center">
                     <a href="{{ route('login') }}" class="btn btn-portal" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); box-shadow: none;"><i class="bi bi-box-arrow-in-right me-1"></i> Log In</a>
@@ -455,7 +455,7 @@
     </section>
 
     <!-- Info Kamar (Live) -->
-    <section id="kamar" class="bed-section">
+    <section id="kamar" class="bed-section" style="background-image: url('{{ $bannerSrc }}');">
         <div class="container" style="position: relative; z-index: 2;">
             <div class="section-header text-center">
                 <span class="section-subtitle text-white">Real-Time Data SIMRS</span>
@@ -466,9 +466,9 @@
             <div class="row g-4 justify-content-center">
                 @forelse($wards as $ward)
                     <div class="col-12 mb-2">
-                        <div class="text-center text-white mb-2">
-                            <h4 class="fw-bold mb-0 text-white"><i class="bi bi-building me-2"></i>{{ $ward->name }}</h4>
-                            <small class="opacity-75">{{ $ward->building }} - {{ $ward->floor }}</small>
+                        <div class="text-center text-white mb-3">
+                            <h4 class="fw-bold mb-0 text-white"><i class="bi bi-building me-2" style="color: var(--primary);"></i>{{ $ward->name }}</h4>
+                            <small class="text-white opacity-75">{{ $ward->building }} - {{ $ward->floor }}</small>
                         </div>
                         <div class="row g-3 justify-content-center">
                             @foreach($ward->rooms as $room)
@@ -502,44 +502,10 @@
     <!-- Jadwal Pelayanan dipindahkan ke halaman terpisah (jadwal.blade.php) -->
 
 
-    <!-- Galeri Foto RSUD -->
-    <section id="galeri" class="welcome-section" style="background: var(--light);">
-        <div class="container" data-aos="fade-up">
-            <div class="section-header text-center">
-                <span class="section-subtitle">Dokumentasi Kegiatan</span>
-                <h2 class="section-title">Galeri Foto RSUD</h2>
-            </div>
-            <div class="row g-3">
-                @php
-                    $galeriDefaults = [
-                        ['src' => 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=600&auto=format&fit=crop', 'caption' => 'Gedung Utama RSUD'],
-                        ['src' => 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=600&auto=format&fit=crop', 'caption' => 'Ruang Perawatan Modern'],
-                        ['src' => 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?q=80&w=600&auto=format&fit=crop', 'caption' => 'Laboratorium Klinik'],
-                        ['src' => 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=600&auto=format&fit=crop', 'caption' => 'Unit Gawat Darurat'],
-                        ['src' => 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=600&auto=format&fit=crop', 'caption' => 'Pelayanan Farmasi'],
-                        ['src' => 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?q=80&w=600&auto=format&fit=crop', 'caption' => 'Tim Medis Profesional'],
-                    ];
-                @endphp
-                @for($idx = 0; $idx < 6; $idx++)
-                @php
-                    $settingIdx = $idx + 1;
-                    $imgSrc = isset($settings['galeri_'.$settingIdx.'_img']) && \Illuminate\Support\Facades\Storage::disk('public')->exists($settings['galeri_'.$settingIdx.'_img']) 
-                                ? asset('storage/' . $settings['galeri_'.$settingIdx.'_img']) 
-                                : $galeriDefaults[$idx]['src'];
-                    $caption = $settings['galeri_'.$settingIdx.'_caption'] ?? $galeriDefaults[$idx]['caption'];
-                @endphp
-                <div class="{{ $idx < 2 ? 'col-lg-6' : 'col-lg-3' }} col-md-6" data-aos="fade-up" data-aos-delay="{{ $idx * 80 }}">
-                    <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; cursor: pointer; height: {{ $idx < 2 ? '320px' : '200px' }};" onmouseover="this.querySelector('.galeri-overlay').style.opacity='1';" onmouseout="this.querySelector('.galeri-overlay').style.opacity='0';">
-                        <img src="{{ $imgSrc }}" alt="{{ $caption }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.08)';" onmouseout="this.style.transform='scale(1)';">
-                        <div class="galeri-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); opacity: 0; transition: 0.3s;">
-                            <span style="color: white; font-weight: 700; font-size: 0.95rem;">{{ $caption }}</span>
-                        </div>
-                    </div>
-                </div>
-                @endfor
-            </div>
-        </div>
-    </section>
+
+
+    <!-- Pengaduan Masyarakat dipindahkan ke halaman terpisah (pengaduan.blade.php) -->
+
 
     <!-- Instagram Feed Section -->
     <section class="welcome-section" style="background: #fafafa; padding-top: 60px; padding-bottom: 60px;">
@@ -556,94 +522,6 @@
             
         </div>
     </section>
-
-    <!-- Pengaduan Masyarakat -->
-    <section id="pengaduan" class="welcome-section position-relative" style="background: linear-gradient(135deg, var(--dark) 0%, #1e3a5f 100%); color: white;">
-        <div class="container" data-aos="fade-up">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <span style="color: #5eead4; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Layanan Pengaduan</span>
-                    <h2 class="fw-bold mt-2 mb-4" style="font-family: 'Outfit', sans-serif; font-size: 2.4rem; color: white;">Suara Anda, <br>Perbaikan Kami</h2>
-                    <p style="color: rgba(255,255,255,0.6); line-height: 1.8; font-size: 1rem;">Kami sangat menghargai masukan, kritik, dan saran dari masyarakat. Sampaikan pengaduan Anda dan kami akan merespon dalam waktu 1×24 jam kerja.</p>
-                    <div class="d-flex flex-column gap-3 mt-4">
-                        <div class="d-flex align-items-center gap-3">
-                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(94, 234, 212, 0.15); display: flex; align-items: center; justify-content: center;"><i class="bi bi-shield-check" style="color: #5eead4; font-size: 1.2rem;"></i></div>
-                            <span style="color: rgba(255,255,255,0.8); font-weight: 500;">Dijamin kerahasiaannya</span>
-                        </div>
-                        <div class="d-flex align-items-center gap-3">
-                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(94, 234, 212, 0.15); display: flex; align-items: center; justify-content: center;"><i class="bi bi-clock-history" style="color: #5eead4; font-size: 1.2rem;"></i></div>
-                            <span style="color: rgba(255,255,255,0.8); font-weight: 500;">Respon dalam 1×24 jam kerja</span>
-                        </div>
-                        <div class="d-flex align-items-center gap-3">
-                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(94, 234, 212, 0.15); display: flex; align-items: center; justify-content: center;"><i class="bi bi-graph-up-arrow" style="color: #5eead4; font-size: 1.2rem;"></i></div>
-                            <span style="color: rgba(255,255,255,0.8); font-weight: 500;">Tindak lanjut transparan</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 offset-lg-1">
-                    <div style="background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 36px;">
-                        <h5 class="fw-bold mb-4" style="color: white;">Kirim Pengaduan</h5>
-                        <div id="pengaduanSuccess" style="display:none;" class="alert border-0 mb-4" role="alert" style="background: rgba(45,212,191,0.15); color: #5eead4; border-radius: 14px;">
-                            <i class="bi bi-check-circle-fill me-2"></i> <strong>Berhasil!</strong> Pengaduan Anda telah kami terima dan akan segera ditindaklanjuti.
-                        </div>
-                        <form id="formPengaduan">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <div class="mb-3">
-                                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" required style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
-                            </div>
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-6">
-                                    <input type="email" name="email" class="form-control" placeholder="Email" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="tel" name="phone" class="form-control" placeholder="No. Telepon" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <select name="category" class="form-select" required style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
-                                    <option value="" style="color: #333;">Kategori Pengaduan</option>
-                                    <option value="Pelayanan Medis" style="color: #333;">Pelayanan Medis</option>
-                                    <option value="Fasilitas & Sarana" style="color: #333;">Fasilitas & Sarana</option>
-                                    <option value="Administrasi" style="color: #333;">Administrasi</option>
-                                    <option value="Lainnya" style="color: #333;">Lainnya</option>
-                                </select>
-                            </div>
-                            <div class="mb-4">
-                                <textarea name="message" class="form-control" rows="4" placeholder="Isi pengaduan Anda secara detail..." required style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;"></textarea>
-                            </div>
-                            <div id="pengaduanError" style="display:none;" class="alert alert-danger border-0 mb-3" style="border-radius: 12px;"></div>
-                            <button type="submit" id="btnKirimPengaduan" class="btn w-100 fw-bold py-3" style="background: linear-gradient(135deg, #0d9488, #2dd4bf); color: white; border: none; border-radius: 12px; font-size: 1rem;">
-                                <i class="bi bi-send me-2"></i> Kirim Pengaduan
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Asuransi & Mitra (Marquee) -->
-    <div class="partner-scroll">
-        <div class="partner-scroll-inner">
-            <h5 class="d-inline mx-4 fw-bold text-muted">BPJS Kesehatan</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Jasa Raharja</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Mandiri Inhealth</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Admedika</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Asuransi Sinar Mas</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Allianz</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">BPJS Ketenagakerjaan</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Prudential</h5>
-            
-            <h5 class="d-inline mx-4 fw-bold text-muted">BPJS Kesehatan</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Jasa Raharja</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Mandiri Inhealth</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Admedika</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Asuransi Sinar Mas</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Allianz</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">BPJS Ketenagakerjaan</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Prudential</h5>
-        </div>
-    </div>
 
     <!-- Location / Map Section -->
     <section class="bg-light py-5">
@@ -700,7 +578,7 @@
                         <a href="{{ route('frontend.register') }}">Pendaftaran Mandiri</a>
                         <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalSPO">Panduan Rawat Inap</a>
                         <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalTarif">Tarif Layanan BPJS</a>
-                        <a href="#pengaduan">Saran & Pengaduan</a>
+                        <a href="{{ route('frontend.pengaduan') }}">Saran & Pengaduan</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4">

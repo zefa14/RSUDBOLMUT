@@ -518,7 +518,7 @@
             
             <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
             <script src="https://elfsightcdn.com/platform.js" async></script>
-            <div class="elfsight-app-b712f345-8273-42a6-a405-bf076ce11fbd" data-elfsight-app-lazy></div>
+            <div class="elfsight-app-b712f345-8273-42a6-a405-bf076ce11fbd"></div>
             
         </div>
     </section>

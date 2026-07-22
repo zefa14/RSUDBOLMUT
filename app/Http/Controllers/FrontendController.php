@@ -27,6 +27,43 @@ class FrontendController extends Controller
     }
 
     /**
+     * Menampilkan halaman khusus Tim Dokter
+     */
+    public function doctors()
+    {
+        $doctors = Doctor::with(['department', 'schedules' => function($q) {
+            $q->orderBy('day_of_week', 'asc')->orderBy('start_time', 'asc');
+        }])->where('is_active', true)->get();
+        
+        $settings = json_decode(\Illuminate\Support\Facades\Storage::get('settings.json') ?? '{}', true);
+
+        return view('frontend.doctors', compact('doctors', 'settings'));
+    }
+
+    /**
+     * Menampilkan halaman khusus Jadwal Poliklinik
+     */
+    public function jadwal()
+    {
+        $doctors = Doctor::with(['department', 'schedules' => function($q) {
+            $q->orderBy('day_of_week', 'asc')->orderBy('start_time', 'asc');
+        }])->where('is_active', true)->get();
+        
+        $settings = json_decode(\Illuminate\Support\Facades\Storage::get('settings.json') ?? '{}', true);
+
+        return view('frontend.jadwal', compact('doctors', 'settings'));
+    }
+
+    /**
+     * Menampilkan halaman khusus Tentang
+     */
+    public function about()
+    {
+        $settings = json_decode(\Illuminate\Support\Facades\Storage::get('settings.json') ?? '{}', true);
+        return view('frontend.about', compact('settings'));
+    }
+
+    /**
      * Menampilkan form pendaftaran online
      */
     public function registerForm()

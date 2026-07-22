@@ -46,7 +46,7 @@
 
         ::selection { background: var(--primary-light); color: var(--primary-dark); }
 
-        /* ─── NAVBAR ─── */
+        /* â”€â”€â”€ NAVBAR â”€â”€â”€ */
         .navbar-glass {
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(20px);
@@ -90,7 +90,7 @@
         }
         .btn-portal:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(13, 148, 136, 0.4); color: white; background: var(--primary-dark); }
 
-        /* ─── HERO ─── */
+        /* â”€â”€â”€ HERO â”€â”€â”€ */
         .hero-section {
             position: relative;
             padding: 200px 0 160px;
@@ -118,7 +118,7 @@
         .wave-bottom svg { position: relative; display: block; width: calc(100% + 1.3px); height: 70px; }
         .wave-bottom .shape-fill { fill: var(--light); }
 
-        /* ─── QUICK LINKS ─── */
+        /* â”€â”€â”€ QUICK LINKS â”€â”€â”€ */
         .quick-link-card {
             background: white; border-radius: var(--radius-lg); padding: 32px 24px; text-align: center; height: 100%;
             box-shadow: var(--shadow-sm); transition: all 0.35s ease;
@@ -136,7 +136,7 @@
         .quick-link-card h4 { font-weight: 700; color: var(--dark); font-size: 1.05rem; margin-bottom: 6px; }
         .quick-link-card p { color: var(--text-gray); margin: 0; font-size: 0.85rem; }
 
-        /* ─── SECTIONS ─── */
+        /* â”€â”€â”€ SECTIONS â”€â”€â”€ */
         .section-header { text-align: center; margin-bottom: 50px; }
         .section-subtitle { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 10px; display: block; }
         .section-title { font-weight: 800; font-size: 2.4rem; color: var(--dark); letter-spacing: -0.5px; }
@@ -145,7 +145,7 @@
         .img-overlap { border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); position: relative; z-index: 2; width: 100%; border: 8px solid white; }
         .decor-box { position: absolute; top: -15px; right: 10px; width: 100%; height: 100%; border: 2px dashed var(--primary); border-radius: var(--radius-lg); z-index: 1; opacity: 0.4; }
 
-        /* ─── BED ─── */
+        /* â”€â”€â”€ BED â”€â”€â”€ */
         .bed-section { padding: 90px 0; background: var(--dark); position: relative; overflow: hidden; }
         .bed-section::before { content: ''; position: absolute; width: 100%; height: 100%; background: radial-gradient(circle at 20% 50%, rgba(13,148,136,0.08) 0%, transparent 50%); }
         .bed-card {
@@ -157,7 +157,7 @@
         .glow-green { box-shadow: 0 0 20px rgba(13, 148, 136, 0.15); border-color: rgba(13, 148, 136, 0.25); }
         .glow-red { box-shadow: 0 0 20px rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.25); }
 
-        /* ─── DOCTORS ─── */
+        /* â”€â”€â”€ DOCTORS â”€â”€â”€ */
         .doctor-card {
             background: white; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border);
             box-shadow: var(--shadow-sm); transition: 0.35s;
@@ -170,7 +170,7 @@
         .doctor-info h5 { font-weight: 700; color: var(--dark); margin-bottom: 4px; font-size: 1rem; }
         .dept-badge { background: var(--primary-light); color: var(--primary-dark); font-weight: 600; font-size: 0.72rem; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
 
-        /* ─── SEARCH & FILTER ─── */
+        /* â”€â”€â”€ SEARCH & FILTER â”€â”€â”€ */
         .search-widget { background: white; border-radius: var(--radius); padding: 12px; box-shadow: var(--shadow-lg); margin-top: -40px; position: relative; z-index: 10; display: flex; gap: 8px; border: 1px solid var(--border); }
         .search-widget select, .search-widget input { border: 1px solid #e2e8f0; background: var(--light); border-radius: 12px; padding: 14px 18px; font-weight: 500; width: 100%; outline: none; transition: 0.2s; font-size: 0.9rem; }
         .search-widget select:focus, .search-widget input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(13,148,136,0.1); }
@@ -184,7 +184,7 @@
         .timeline-step i { font-size: 1.8rem; color: var(--primary); margin-bottom: 4px; }
         .timeline-step span { font-weight: 700; font-size: 0.78rem; color: var(--dark); line-height: 1.2; }
 
-        /* ─── ARTICLES ─── */
+        /* â”€â”€â”€ ARTICLES â”€â”€â”€ */
         .article-card { background: white; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: 0.35s; height: 100%; display: flex; flex-direction: column; }
         .article-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
         .article-img { width: 100%; height: 200px; object-fit: cover; }
@@ -194,14 +194,14 @@
         .article-link { color: var(--primary); font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 5px; margin-top: auto; font-size: 0.9rem; }
         .article-link:hover { gap: 10px; }
 
-        /* ─── PARTNERS ─── */
+        /* â”€â”€â”€ PARTNERS â”€â”€â”€ */
         .partner-scroll { overflow: hidden; white-space: nowrap; padding: 35px 0; border-top: 1px solid var(--border); background: white; }
         .partner-scroll-inner { display: inline-block; animation: scroll 25s linear infinite; }
         .partner-scroll h5 { display: inline; margin: 0 40px; font-weight: 700; color: #cbd5e1; font-size: 1rem; transition: 0.3s; }
         .partner-scroll h5:hover { color: var(--primary); }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* ─── FOOTER ─── */
+        /* â”€â”€â”€ FOOTER â”€â”€â”€ */
         footer { background: var(--dark); padding: 70px 0 25px; color: rgba(255,255,255,0.7); }
         .footer-logo { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.4rem; color: white; }
         .footer-logo i { color: var(--primary); }
@@ -213,7 +213,7 @@
         .social-btn:hover { background: var(--primary); color: white; transform: translateY(-2px); border-color: var(--primary); }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); margin-top: 40px; padding-top: 20px; text-align: center; color: rgba(255,255,255,0.35); font-size: 0.85rem; font-weight: 500; }
 
-        /* ─── RESPONSIVE ─── */
+        /* â”€â”€â”€ RESPONSIVE â”€â”€â”€ */
         @media (max-width: 768px) {
             .hero-title { font-size: 2.4rem; letter-spacing: -1px; }
             .hero-text { font-size: 1rem; }
@@ -245,18 +245,18 @@
             
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#hero-top">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#hero-top">Beranda</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('frontend.about') }}">Tentang</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('frontend.jadwal') }}">Jadwal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#layanan">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ route('frontend.jadwal') }}">Jadwal</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Informasi
                         </a>
                         <ul class="dropdown-menu shadow-sm" aria-labelledby="infoDropdown">
                             <li><a class="dropdown-item" href="{{ route('frontend.doctors') }}">Tim Dokter</a></li>
-                            <li><a class="dropdown-item" href="#kamar">Fasilitas Kamar</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/') }}#kamar">Fasilitas Kamar</a></li>
                             <li><a class="dropdown-item" href="{{ route('frontend.jadwal') }}">Jadwal Pelayanan <i class="bi bi-calendar-event"></i></a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalStruktur">Struktur Organisasi <i class="bi bi-diagram-3"></i></a></li>
@@ -265,405 +265,92 @@
                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalTarif">Tarif Rumah Sakit <i class="bi bi-cash-stack"></i></a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#pengaduan">Pengaduan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#pengaduan">Pengaduan</a></li>
                 </ul>
                 <div class="d-flex gap-2 align-items-center">
                     <a href="{{ route('login') }}" class="btn btn-portal" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); box-shadow: none;"><i class="bi bi-box-arrow-in-right me-1"></i> Log In</a>
-                    <a href="#kontak" class="btn btn-portal"><i class="bi bi-telephone-fill me-1"></i> Hubungi Kami</a>
+                    <a href="{{ url('/') }}#kontak" class="btn btn-portal"><i class="bi bi-telephone-fill me-1"></i> Hubungi Kami</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    @php
-        $bannerSrc = (isset($settings['banner_image']) && \Illuminate\Support\Facades\Storage::disk('public')->exists($settings['banner_image']))
-            ? asset('storage/' . $settings['banner_image'])
-            : 'https://images.unsplash.com/photo-1551076805-e18690c5e530?q=80&w=1920&auto=format&fit=crop';
-    @endphp
-    <!-- Hero Section -->
-    <section id="hero-top" class="hero-section" style="background-image: url('{{ $bannerSrc }}');">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <div class="row align-items-center">
-                <div class="col-lg-8 mb-5 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
-                    <span class="badge bg-white bg-opacity-10 text-white px-4 py-2 rounded-pill fw-bold mb-4 border border-white border-opacity-25" style="font-size: 0.85rem; backdrop-filter: blur(5px);">
-                        <i class="bi bi-patch-check-fill me-1 text-success"></i> {{ $settings['hero_badge'] ?? 'Rumah Sakit Terakreditasi Paripurna' }}
-                    </span>
-                    @php $heroTitle = $settings['hero_title'] ?? 'Kesehatan Anda, Prioritas Utama Kami'; $heroParts = explode(',', $heroTitle, 2); @endphp
-                    <h1 class="hero-title">{{ trim($heroParts[0]) }},<br><span>{{ trim($heroParts[1] ?? '') }}</span></h1>
-                    <p class="hero-text">{{ $settings['hero_subtitle'] ?? 'RSUD menghadirkan pelayanan medis terbaik dengan teknologi terkini, tim ahli berpengalaman, dan sentuhan kemanusiaan yang hangat.' }}</p>
-                    
-                    <div class="d-flex flex-wrap gap-3 mb-5">
-                        <a href="{{ route('frontend.register') }}" class="btn btn-lg fw-bold text-white shadow-sm" style="background: var(--primary); border: none; padding: 14px 32px; border-radius: 50px; font-size: 0.95rem;">
-                            <i class="bi bi-calendar-check me-2"></i>Daftar Online
-                        </a>
-                        <a href="#jadwal" class="btn btn-lg fw-bold" style="padding: 14px 32px; border-radius: 50px; backdrop-filter: blur(5px); border: 1.5px solid rgba(255,255,255,0.3); color: white; font-size: 0.95rem;">
-                            Lihat Jadwal <i class="bi bi-arrow-right ms-2"></i>
-                        </a>
-                    </div>
-
-                    <div class="d-flex flex-wrap gap-4 mt-4 pt-4" style="border-top: 1px solid rgba(255,255,255,0.15);">
-                        <div class="hero-stat">
-                            <h3>12k+</h3>
-                            <p>Pasien Dilayani</p>
-                        </div>
-                        <div style="width: 1px; background: rgba(255,255,255,0.15); align-self: stretch;"></div>
-                        <div class="hero-stat">
-                            <h3>24/7</h3>
-                            <p>IGD & Rawat Inap</p>
-                        </div>
-                        <div style="width: 1px; background: rgba(255,255,255,0.15); align-self: stretch;"></div>
-                        <div class="hero-stat">
-                            <h3>Kelas D</h3>
-                            <p>RSU Daerah</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Wave Separator -->
-        <div class="wave-bottom">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- Pencarian Pintar (Smart Search Widget) -->
-    <div class="container mb-5" style="position: relative; z-index: 15;" data-aos="fade-up">
-        <div class="search-widget flex-column flex-md-row">
-            <div class="flex-grow-1">
-                <input type="text" id="mainSearchInput" placeholder="🔍 Cari nama dokter spesialis atau layanan...">
-            </div>
-            <div class="flex-grow-1">
-                <select id="mainSearchSelect">
-                    <option value="">Semua Poliklinik</option>
-                    @foreach($departments as $dept)
-                        <option value="{{ $dept->name }}">{{ $dept->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <button id="mainSearchBtn" class="btn-search"><i class="bi bi-search me-2"></i>Temukan Jadwal</button>
-        </div>
-    </div>
-
-    <!-- Layanan Cepat -->
-    <div class="container pt-4" style="position: relative; z-index: 10;">
-        <div class="row justify-content-center g-4">
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <a href="{{ route('frontend.register') }}" class="quick-link-card">
-                    <div class="icon-wrapper icon-blue"><i class="bi bi-laptop"></i></div>
-                    <h4>Pendaftaran Online</h4>
-                    <p>Ambil tiket antrean dari rumah</p>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <a href="#jadwal" class="quick-link-card">
-                    <div class="icon-wrapper icon-green"><i class="bi bi-file-medical"></i></div>
-                    <h4>Jadwal Dokter</h4>
-                    <p>Cek jam praktek spesialis</p>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <a href="#kamar" class="quick-link-card">
-                    <div class="icon-wrapper icon-blue"><i class="bi bi-hospital"></i></div>
-                    <h4>Info Kamar</h4>
-                    <p>Ketersediaan ruang rawat inap</p>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <a href="tel:119" class="quick-link-card">
-                    <div class="icon-wrapper" style="background: #fee2e2; color: #ef4444;"><i class="bi bi-truck-front-fill"></i></div>
-                    <h4>Layanan Gawat Darurat</h4>
-                    <p>Ambulans Siaga 24 Jam</p>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Alur Pelayanan Pasien -->
-    <section class="welcome-section pb-0" style="background: var(--light);">
+    <!-- Jadwal Poliklinik -->
+    <section id="jadwal" class="welcome-section" style="background: var(--light); padding-top: 140px;">
         <div class="container" data-aos="fade-up">
-            <div class="section-header text-center mb-5">
-                <span class="section-subtitle">Patient Journey</span>
-                <h2 class="section-title">Alur Pelayanan Modern</h2>
-            </div>
-            
-            <div class="d-none d-lg-block">
-                <div class="timeline-box">
-                    <div class="timeline-step">
-                        <i class="bi bi-phone"></i>
-                        <span>1. Daftar<br>Online</span>
-                    </div>
-                    <div class="timeline-step">
-                        <i class="bi bi-qr-code-scan"></i>
-                        <span>2. Scan<br>Barcode</span>
-                    </div>
-                    <div class="timeline-step">
-                        <i class="bi bi-heart-pulse"></i>
-                        <span>3. Pemeriksaan<br>Medis</span>
-                    </div>
-                    <div class="timeline-step">
-                        <i class="bi bi-capsule"></i>
-                        <span>4. Ambil<br>Obat</span>
-                    </div>
-                    <div class="timeline-step">
-                        <i class="bi bi-emoji-smile"></i>
-                        <span>5. Pulang<br>Sehat</span>
-                    </div>
-                </div>
-            </div>
-            <div class="d-lg-none mt-4 text-center">
-                <p class="text-muted" style="line-height: 1.8;">Proses pendaftaran dari awal hingga pengambilan obat dapat dilakukan dengan sangat mudah melalui sistem antrean terintegrasi kami.</p>
-            </div>
-        </div>
-    </section>
-
-    
-
-    <!-- Layanan Unggulan -->
-    <section id="layanan" style="padding: 100px 0; background: #f8fafc;">
-        <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-subtitle">Fasilitas & Layanan Utama</span>
-                <h2 class="section-title mb-3">Layanan Unggulan Kami</h2>
-                <p class="text-muted mx-auto" style="max-width: 700px; font-size: 1.1rem;">Berkomitmen memberikan perawatan holistik melalui fasilitas medis modern yang dirancang khusus untuk mempercepat proses pemulihan Anda.</p>
-            </div>
-            
-            <div class="row g-4 mt-2">
-                @php
-                    $layananDefaults = [
-                        ['icon' => 'bi-heart-pulse', 'title' => 'Jantung Terpadu', 'desc' => 'Penanganan penyakit jantung komprehensif didukung Cath Lab modern dan tim Kardiolog berpengalaman.', 'gradient' => 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)', 'color' => 'text-primary'],
-                        ['icon' => 'bi-bandaid', 'title' => 'Trauma Center', 'desc' => 'Penanganan kecelakaan dan darurat bedah 24 jam dengan respons cepat serta fasilitas operasi dan IGD darurat lengkap.', 'gradient' => 'linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)', 'color' => 'text-success'],
-                        ['icon' => 'bi-person-hearts', 'title' => 'Klinik Ibu & Anak', 'desc' => 'Pusat kesehatan ibu hamil, bersalin, dan perawatan neonatal dengan fasilitas NICU dan PICU mutakhir.', 'gradient' => 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)', 'color' => 'text-warning'],
-                    ];
-                @endphp
-                @for($i = 0; $i < 3; $i++)
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ ($i+1) * 100 }}">
-                    <div style="background: white; border-radius: 25px; padding: 40px; box-shadow: var(--shadow-sm); height: 100%; transition: all 0.4s ease; border: 1px solid var(--border);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-lg)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)';">
-                        <div style="width: 70px; height: 70px; background: {{ $layananDefaults[$i]['gradient'] }}; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
-                            <i class="bi {{ $settings['layanan_'.($i+1).'_icon'] ?? $layananDefaults[$i]['icon'] }} {{ $layananDefaults[$i]['color'] }} fs-2"></i>
-                        </div>
-                        <h4 style="font-family: 'Outfit', sans-serif; font-weight: 800; color: #0f172a; margin-bottom: 15px;">{{ $settings['layanan_'.($i+1).'_title'] ?? $layananDefaults[$i]['title'] }}</h4>
-                        <p class="text-muted" style="line-height: 1.7; margin-bottom: 0;">{{ $settings['layanan_'.($i+1).'_desc'] ?? $layananDefaults[$i]['desc'] }}</p>
-                    </div>
-                </div>
-                @endfor
-            </div>
-        </div>
-    </section>
-
-    <!-- Info Kamar (Live) -->
-    <section id="kamar" class="bed-section">
-        <div class="container" style="position: relative; z-index: 2;">
             <div class="section-header text-center">
-                <span class="section-subtitle text-white">Real-Time Data SIMRS</span>
-                <h2 class="section-title text-white mb-3">Ketersediaan Kamar Rawat Inap</h2>
-                <p class="text-white opacity-75 mx-auto" style="max-width: 600px;">Data di bawah ini tersinkronisasi otomatis dengan sistem sentral administrasi rumah sakit kami. Transparansi adalah komitmen kami.</p>
+                <span class="fw-bold text-uppercase" style="color: #0d9488; font-size: 0.85rem; letter-spacing: 1px;">RSUD MARIA WALANDA MARAMIS</span>
+                <h2 class="section-title mt-2 mb-2">Jadwal Pelayanan Poliklinik</h2>
+                <div style="width: 60px; height: 3px; background-color: #0d9488; margin: 15px auto;"></div>
             </div>
             
-            <div class="row g-4 justify-content-center">
-                @forelse($wards as $ward)
-                    <div class="col-12 mb-2">
-                        <div class="text-center text-white mb-2">
-                            <h4 class="fw-bold mb-0 text-white"><i class="bi bi-building me-2"></i>{{ $ward->name }}</h4>
-                            <small class="opacity-75">{{ $ward->building }} - {{ $ward->floor }}</small>
-                        </div>
-                        <div class="row g-3 justify-content-center">
-                            @foreach($ward->rooms as $room)
-                            <div class="col-lg-2 col-md-3 col-6">
-                                <div class="bed-card {{ $room->available_beds > 0 ? 'glow-green' : 'glow-red' }} h-100">
-                                    <div class="badge bg-white text-dark mb-3 fw-bold rounded-pill">{{ $room->room_class }}</div>
-                                    <div class="bed-number" style="font-size: 2.5rem;">{{ str_pad($room->available_beds, 2, '0', STR_PAD_LEFT) }}</div>
-                                    <small class="d-block text-white opacity-75 mb-2">dari {{ $room->total_beds }} bed</small>
-                                    
-                                    @if($room->available_beds == 0)
-                                        <div class="text-danger fw-bold mt-auto"><i class="bi bi-x-circle-fill me-1"></i> Penuh</div>
-                                    @else
-                                        <div class="text-success fw-bold mt-auto"><i class="bi bi-check-circle-fill me-1"></i> Kosong</div>
-                                    @endif
+            <!-- Filter Section -->
+            <div class="d-flex flex-wrap align-items-center justify-content-between p-3 bg-white rounded-4 shadow-sm mb-5 border border-light">
+                <div class="position-relative flex-grow-1 me-lg-4 mb-3 mb-lg-0" style="max-width: 400px;">
+                    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                    <input type="text" id="searchJadwal" class="form-control border-0 bg-light ps-5 py-2 rounded-pill" placeholder="Cari nama dokter atau poliklinik..." style="font-size: 0.95rem;">
+                </div>
+                <div class="d-flex flex-wrap gap-2" id="dayFilterContainer">
+                    <button class="btn px-4 py-2 rounded-pill fw-bold text-white shadow-sm filter-day-btn active" data-day="Semua" style="background-color: #0d9488; font-size: 0.9rem;">Semua</button>
+                    <button class="btn px-4 py-2 rounded-pill fw-bold text-dark border-0 filter-day-btn" data-day="Senin" style="background-color: #f1f5f9; font-size: 0.9rem;">Senin</button>
+                    <button class="btn px-4 py-2 rounded-pill fw-bold text-dark border-0 filter-day-btn" data-day="Selasa" style="background-color: #f1f5f9; font-size: 0.9rem;">Selasa</button>
+                    <button class="btn px-4 py-2 rounded-pill fw-bold text-dark border-0 filter-day-btn" data-day="Rabu" style="background-color: #f1f5f9; font-size: 0.9rem;">Rabu</button>
+                    <button class="btn px-4 py-2 rounded-pill fw-bold text-dark border-0 filter-day-btn" data-day="Kamis" style="background-color: #f1f5f9; font-size: 0.9rem;">Kamis</button>
+                    <button class="btn px-4 py-2 rounded-pill fw-bold text-dark border-0 filter-day-btn" data-day="Jumat" style="background-color: #f1f5f9; font-size: 0.9rem;">Jumat</button>
+                    <button class="btn px-4 py-2 rounded-pill fw-bold text-dark border-0 filter-day-btn" data-day="Sabtu" style="background-color: #f1f5f9; font-size: 0.9rem;">Sabtu</button>
+                </div>
+            </div>
+
+            <div class="row g-4" id="jadwalContainer">
+                @forelse($doctors as $doctor)
+                <div class="col-lg-4 col-md-6 jadwal-card">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-4" style="transition: all 0.3s ease; cursor: pointer; border: 1px solid rgba(0,0,0,0.03) !important;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 .125rem .25rem rgba(0,0,0,.075)';">
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="me-3">
+                                <div style="width: 50px; height: 50px; border-radius: 50%; background-color: #f0fdfa; color: #0d9488; display: flex; align-items: center; justify-content: center; border: 2px solid #ccfbf1;">
+                                    <i class="bi bi-stethoscope fs-4"></i>
                                 </div>
                             </div>
-                            @endforeach
+                            <div>
+                                <h5 class="fw-bold mb-1" style="font-size: 1.05rem; color: #0f172a; line-height: 1.4;">{{ $doctor->name }}</h5>
+                                <span class="fw-bold" style="color: #0d9488; font-size: 0.75rem; text-transform: uppercase;">{{ $doctor->department->name ?? 'POLI UMUM' }}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-auto">
+                            <span class="text-muted fw-bold d-block mb-3" style="font-size: 0.75rem; letter-spacing: 1px;">JADWAL PRAKTEK</span>
+                            @forelse($doctor->schedules as $schedule)
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="fw-bold text-dark" style="font-size: 0.9rem;">{{ $schedule->day_name }}</span>
+                                <span class="text-muted" style="font-size: 0.9rem;">{{ $schedule->time_range }}</span>
+                            </div>
+                            @empty
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <span class="text-muted small fst-italic">Jadwal belum tersedia</span>
+                            </div>
+                            @endforelse
+                            <div class="mb-4"></div>
+                            
+                            @php
+                                $deptName = strtolower($doctor->department->name ?? '');
+                                $isNonBooking = in_array($deptName, ['ugd', 'kamar operasi (ok)']);
+                            @endphp
+
+                            @if(!$isNonBooking)
+                            <div class="text-center mt-3 pt-3" style="border-top: 1px solid rgba(0,0,0,0.05);">
+                                <a href="{{ route('frontend.register') }}" class="fw-bold text-decoration-none" style="color: #0d9488; font-size: 0.95rem;">Buat Janji Temu <i class="bi bi-arrow-right ms-1"></i></a>
+                            </div>
+                            @else
+                            <div class="text-center mt-3 pt-3" style="border-top: 1px solid rgba(0,0,0,0.05);">
+                                <span class="fw-bold text-danger" style="font-size: 0.95rem;"><i class="bi bi-info-circle me-1"></i> Layanan Khusus (Tanpa Janji)</span>
+                            </div>
+                            @endif
                         </div>
                     </div>
+                </div>
                 @empty
-                    <div class="col-12 text-center text-white opacity-50 py-5">
-                        <i class="bi bi-hospital fs-1 d-block mb-3"></i>
-                        <h5>Data kamar sedang dalam pemeliharaan.</h5>
-                    </div>
+                <div class="col-12 text-center text-muted py-4">Data dokter belum tersedia.</div>
                 @endforelse
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Jadwal Pelayanan dipindahkan ke halaman terpisah (jadwal.blade.php) -->
-
-
-    <!-- Galeri Foto RSUD -->
-    <section id="galeri" class="welcome-section" style="background: var(--light);">
-        <div class="container" data-aos="fade-up">
-            <div class="section-header text-center">
-                <span class="section-subtitle">Dokumentasi Kegiatan</span>
-                <h2 class="section-title">Galeri Foto RSUD</h2>
-            </div>
-            <div class="row g-3">
-                @php
-                    $galeriDefaults = [
-                        ['src' => 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=600&auto=format&fit=crop', 'caption' => 'Gedung Utama RSUD'],
-                        ['src' => 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=600&auto=format&fit=crop', 'caption' => 'Ruang Perawatan Modern'],
-                        ['src' => 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?q=80&w=600&auto=format&fit=crop', 'caption' => 'Laboratorium Klinik'],
-                        ['src' => 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=600&auto=format&fit=crop', 'caption' => 'Unit Gawat Darurat'],
-                        ['src' => 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=600&auto=format&fit=crop', 'caption' => 'Pelayanan Farmasi'],
-                        ['src' => 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?q=80&w=600&auto=format&fit=crop', 'caption' => 'Tim Medis Profesional'],
-                    ];
-                @endphp
-                @for($idx = 0; $idx < 6; $idx++)
-                @php
-                    $settingIdx = $idx + 1;
-                    $imgSrc = isset($settings['galeri_'.$settingIdx.'_img']) && \Illuminate\Support\Facades\Storage::disk('public')->exists($settings['galeri_'.$settingIdx.'_img']) 
-                                ? asset('storage/' . $settings['galeri_'.$settingIdx.'_img']) 
-                                : $galeriDefaults[$idx]['src'];
-                    $caption = $settings['galeri_'.$settingIdx.'_caption'] ?? $galeriDefaults[$idx]['caption'];
-                @endphp
-                <div class="{{ $idx < 2 ? 'col-lg-6' : 'col-lg-3' }} col-md-6" data-aos="fade-up" data-aos-delay="{{ $idx * 80 }}">
-                    <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; cursor: pointer; height: {{ $idx < 2 ? '320px' : '200px' }};" onmouseover="this.querySelector('.galeri-overlay').style.opacity='1';" onmouseout="this.querySelector('.galeri-overlay').style.opacity='0';">
-                        <img src="{{ $imgSrc }}" alt="{{ $caption }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.08)';" onmouseout="this.style.transform='scale(1)';">
-                        <div class="galeri-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); opacity: 0; transition: 0.3s;">
-                            <span style="color: white; font-weight: 700; font-size: 0.95rem;">{{ $caption }}</span>
-                        </div>
-                    </div>
-                </div>
-                @endfor
-            </div>
-        </div>
-    </section>
-
-    <!-- Instagram Feed Section -->
-    <section class="welcome-section" style="background: #fafafa; padding-top: 60px; padding-bottom: 60px;">
-        <div class="container" data-aos="fade-up">
-            <div class="section-header text-center mb-4">
-                <span class="section-subtitle" style="color: #e1306c; font-weight: 700;"><i class="bi bi-instagram me-2"></i>@officialrsudbolmongutara</span>
-                <h2 class="section-title">Instagram Feed Kami</h2>
-                <p class="text-muted mx-auto mt-3" style="max-width: 600px;">Dapatkan informasi kesehatan terbaru, jadwal pelayanan, dan kegiatan rumah sakit langsung dari genggaman Anda.</p>
-            </div>
-            
-            <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
-            <script src="https://elfsightcdn.com/platform.js" async></script>
-            <div class="elfsight-app-b712f345-8273-42a6-a405-bf076ce11fbd" data-elfsight-app-lazy></div>
-            
-        </div>
-    </section>
-
-    <!-- Pengaduan Masyarakat -->
-    <section id="pengaduan" class="welcome-section position-relative" style="background: linear-gradient(135deg, var(--dark) 0%, #1e3a5f 100%); color: white;">
-        <div class="container" data-aos="fade-up">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <span style="color: #5eead4; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Layanan Pengaduan</span>
-                    <h2 class="fw-bold mt-2 mb-4" style="font-family: 'Outfit', sans-serif; font-size: 2.4rem; color: white;">Suara Anda, <br>Perbaikan Kami</h2>
-                    <p style="color: rgba(255,255,255,0.6); line-height: 1.8; font-size: 1rem;">Kami sangat menghargai masukan, kritik, dan saran dari masyarakat. Sampaikan pengaduan Anda dan kami akan merespon dalam waktu 1×24 jam kerja.</p>
-                    <div class="d-flex flex-column gap-3 mt-4">
-                        <div class="d-flex align-items-center gap-3">
-                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(94, 234, 212, 0.15); display: flex; align-items: center; justify-content: center;"><i class="bi bi-shield-check" style="color: #5eead4; font-size: 1.2rem;"></i></div>
-                            <span style="color: rgba(255,255,255,0.8); font-weight: 500;">Dijamin kerahasiaannya</span>
-                        </div>
-                        <div class="d-flex align-items-center gap-3">
-                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(94, 234, 212, 0.15); display: flex; align-items: center; justify-content: center;"><i class="bi bi-clock-history" style="color: #5eead4; font-size: 1.2rem;"></i></div>
-                            <span style="color: rgba(255,255,255,0.8); font-weight: 500;">Respon dalam 1×24 jam kerja</span>
-                        </div>
-                        <div class="d-flex align-items-center gap-3">
-                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(94, 234, 212, 0.15); display: flex; align-items: center; justify-content: center;"><i class="bi bi-graph-up-arrow" style="color: #5eead4; font-size: 1.2rem;"></i></div>
-                            <span style="color: rgba(255,255,255,0.8); font-weight: 500;">Tindak lanjut transparan</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 offset-lg-1">
-                    <div style="background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 36px;">
-                        <h5 class="fw-bold mb-4" style="color: white;">Kirim Pengaduan</h5>
-                        <div id="pengaduanSuccess" style="display:none;" class="alert border-0 mb-4" role="alert" style="background: rgba(45,212,191,0.15); color: #5eead4; border-radius: 14px;">
-                            <i class="bi bi-check-circle-fill me-2"></i> <strong>Berhasil!</strong> Pengaduan Anda telah kami terima dan akan segera ditindaklanjuti.
-                        </div>
-                        <form id="formPengaduan">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <div class="mb-3">
-                                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" required style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
-                            </div>
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-6">
-                                    <input type="email" name="email" class="form-control" placeholder="Email" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="tel" name="phone" class="form-control" placeholder="No. Telepon" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <select name="category" class="form-select" required style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
-                                    <option value="" style="color: #333;">Kategori Pengaduan</option>
-                                    <option value="Pelayanan Medis" style="color: #333;">Pelayanan Medis</option>
-                                    <option value="Fasilitas & Sarana" style="color: #333;">Fasilitas & Sarana</option>
-                                    <option value="Administrasi" style="color: #333;">Administrasi</option>
-                                    <option value="Lainnya" style="color: #333;">Lainnya</option>
-                                </select>
-                            </div>
-                            <div class="mb-4">
-                                <textarea name="message" class="form-control" rows="4" placeholder="Isi pengaduan Anda secara detail..." required style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;"></textarea>
-                            </div>
-                            <div id="pengaduanError" style="display:none;" class="alert alert-danger border-0 mb-3" style="border-radius: 12px;"></div>
-                            <button type="submit" id="btnKirimPengaduan" class="btn w-100 fw-bold py-3" style="background: linear-gradient(135deg, #0d9488, #2dd4bf); color: white; border: none; border-radius: 12px; font-size: 1rem;">
-                                <i class="bi bi-send me-2"></i> Kirim Pengaduan
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Asuransi & Mitra (Marquee) -->
-    <div class="partner-scroll">
-        <div class="partner-scroll-inner">
-            <h5 class="d-inline mx-4 fw-bold text-muted">BPJS Kesehatan</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Jasa Raharja</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Mandiri Inhealth</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Admedika</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Asuransi Sinar Mas</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Allianz</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">BPJS Ketenagakerjaan</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Prudential</h5>
-            
-            <h5 class="d-inline mx-4 fw-bold text-muted">BPJS Kesehatan</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Jasa Raharja</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Mandiri Inhealth</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Admedika</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Asuransi Sinar Mas</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Allianz</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">BPJS Ketenagakerjaan</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Prudential</h5>
-        </div>
-    </div>
-
-    <!-- Location / Map Section -->
-    <section class="bg-light py-5">
-        <div class="container">
-            <div class="text-center mb-4">
-                <span class="section-subtitle">Lokasi Kami</span>
-                <h2 class="section-title mb-3">Rumah Sakit Umum Daerah Bolaang Mongondow Utara</h2>
-            </div>
-            <div class="card border-0 shadow-lg rounded-4 overflow-hidden mb-5">
-                <div class="card-body p-0">
-                    <iframe 
-                        src="https://maps.google.com/maps?q=RSUD%20Bolaang%20Mongondow%20Utara&t=&z=14&ie=UTF8&iwloc=&output=embed" 
-                        width="100%" 
-                        height="450" 
-                        style="border:0; display: block;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
             </div>
         </div>
     </section>
@@ -687,10 +374,10 @@
                 <div class="col-lg-2 col-md-4">
                     <h5 class="footer-title">Pintasan</h5>
                     <div class="footer-links">
-                        <a href="#profil">Tentang Kami</a>
-                        <a href="#layanan">Layanan Medis</a>
+                        <a href="{{ url('/') }}#profil">Tentang Kami</a>
+                        <a href="{{ url('/') }}#layanan">Layanan Medis</a>
                         <a href="{{ route('frontend.jadwal') }}">Jadwal Dokter</a>
-                        <a href="#kamar">Informasi Kamar</a>
+                        <a href="{{ url('/') }}#kamar">Informasi Kamar</a>
                         <a href="javascript:void(0)" onclick="alert('Saat ini belum ada lowongan karir yang tersedia. Terima kasih atas minat Anda.')">Karir</a>
                     </div>
                 </div>
@@ -700,7 +387,7 @@
                         <a href="{{ route('frontend.register') }}">Pendaftaran Mandiri</a>
                         <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalSPO">Panduan Rawat Inap</a>
                         <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalTarif">Tarif Layanan BPJS</a>
-                        <a href="#pengaduan">Saran & Pengaduan</a>
+                        <a href="{{ url('/') }}#pengaduan">Saran & Pengaduan</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4">
@@ -904,7 +591,7 @@
                 <div class="modal-header border-0" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0d9488 100%); padding: 28px 32px;">
                     <div>
                         <h5 class="modal-title text-white fw-bold mb-1" id="modalStrukturLabel"><i class="bi bi-diagram-3-fill me-2"></i>Struktur Organisasi</h5>
-                        <p class="text-white-50 mb-0 small">BLUD UPTD RSUD Bolaang Mongondow Utara — Tahun 2026</p>
+                        <p class="text-white-50 mb-0 small">BLUD UPTD RSUD Bolaang Mongondow Utara â€” Tahun 2026</p>
                     </div>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>

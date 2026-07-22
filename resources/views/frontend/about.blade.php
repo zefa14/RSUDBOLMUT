@@ -245,10 +245,10 @@
             
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#hero-top">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#hero-top">Beranda</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('frontend.about') }}">Tentang</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#layanan">Layanan</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('frontend.jadwal') }}">Jadwal</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -256,7 +256,7 @@
                         </a>
                         <ul class="dropdown-menu shadow-sm" aria-labelledby="infoDropdown">
                             <li><a class="dropdown-item" href="{{ route('frontend.doctors') }}">Tim Dokter</a></li>
-                            <li><a class="dropdown-item" href="#kamar">Fasilitas Kamar</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/') }}#kamar">Fasilitas Kamar</a></li>
                             <li><a class="dropdown-item" href="{{ route('frontend.jadwal') }}">Jadwal Pelayanan <i class="bi bi-calendar-event"></i></a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalStruktur">Struktur Organisasi <i class="bi bi-diagram-3"></i></a></li>
@@ -265,406 +265,133 @@
                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalTarif">Tarif Rumah Sakit <i class="bi bi-cash-stack"></i></a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#pengaduan">Pengaduan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#pengaduan">Pengaduan</a></li>
                 </ul>
                 <div class="d-flex gap-2 align-items-center">
                     <a href="{{ route('login') }}" class="btn btn-portal" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); box-shadow: none;"><i class="bi bi-box-arrow-in-right me-1"></i> Log In</a>
-                    <a href="#kontak" class="btn btn-portal"><i class="bi bi-telephone-fill me-1"></i> Hubungi Kami</a>
+                    <a href="{{ url('/') }}#kontak" class="btn btn-portal"><i class="bi bi-telephone-fill me-1"></i> Hubungi Kami</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    @php
-        $bannerSrc = (isset($settings['banner_image']) && \Illuminate\Support\Facades\Storage::disk('public')->exists($settings['banner_image']))
-            ? asset('storage/' . $settings['banner_image'])
-            : 'https://images.unsplash.com/photo-1551076805-e18690c5e530?q=80&w=1920&auto=format&fit=crop';
-    @endphp
-    <!-- Hero Section -->
-    <section id="hero-top" class="hero-section" style="background-image: url('{{ $bannerSrc }}');">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
+    <!-- Sambutan / Profil -->
+    <section id="profil" class="welcome-section" style="padding-top: 140px;">
+        <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-8 mb-5 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
-                    <span class="badge bg-white bg-opacity-10 text-white px-4 py-2 rounded-pill fw-bold mb-4 border border-white border-opacity-25" style="font-size: 0.85rem; backdrop-filter: blur(5px);">
-                        <i class="bi bi-patch-check-fill me-1 text-success"></i> {{ $settings['hero_badge'] ?? 'Rumah Sakit Terakreditasi Paripurna' }}
-                    </span>
-                    @php $heroTitle = $settings['hero_title'] ?? 'Kesehatan Anda, Prioritas Utama Kami'; $heroParts = explode(',', $heroTitle, 2); @endphp
-                    <h1 class="hero-title">{{ trim($heroParts[0]) }},<br><span>{{ trim($heroParts[1] ?? '') }}</span></h1>
-                    <p class="hero-text">{{ $settings['hero_subtitle'] ?? 'RSUD menghadirkan pelayanan medis terbaik dengan teknologi terkini, tim ahli berpengalaman, dan sentuhan kemanusiaan yang hangat.' }}</p>
-                    
-                    <div class="d-flex flex-wrap gap-3 mb-5">
-                        <a href="{{ route('frontend.register') }}" class="btn btn-lg fw-bold text-white shadow-sm" style="background: var(--primary); border: none; padding: 14px 32px; border-radius: 50px; font-size: 0.95rem;">
-                            <i class="bi bi-calendar-check me-2"></i>Daftar Online
-                        </a>
-                        <a href="#jadwal" class="btn btn-lg fw-bold" style="padding: 14px 32px; border-radius: 50px; backdrop-filter: blur(5px); border: 1.5px solid rgba(255,255,255,0.3); color: white; font-size: 0.95rem;">
-                            Lihat Jadwal <i class="bi bi-arrow-right ms-2"></i>
-                        </a>
-                    </div>
-
-                    <div class="d-flex flex-wrap gap-4 mt-4 pt-4" style="border-top: 1px solid rgba(255,255,255,0.15);">
-                        <div class="hero-stat">
-                            <h3>12k+</h3>
-                            <p>Pasien Dilayani</p>
+                <div class="col-lg-5 mb-5 mb-lg-0 position-relative" data-aos="fade-right">
+                    <div class="decor-box"></div>
+                    @php
+                        $profileImg = (isset($settings['profile_image']) && \Illuminate\Support\Facades\Storage::disk('public')->exists($settings['profile_image']))
+                            ? asset('storage/' . $settings['profile_image'])
+                            : 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop';
+                    @endphp
+                    <img src="{{ $profileImg }}" alt="RSUD" class="img-overlap">
+                </div>
+                <div class="col-lg-6 offset-lg-1" data-aos="fade-left">
+                    <span class="section-subtitle">{{ $settings['profile_subtitle'] ?? 'Profil Instansi' }}</span>
+                    <h2 class="section-title mb-4">{{ $settings['profile_title'] ?? 'Mengabdi Sepenuh Hati Untuk Negeri' }}</h2>
+                    <p class="text-muted mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+                        {{ $settings['profile_description'] ?? 'Rumah Sakit Umum Daerah Bolaang Mongondow Utara (RSUD Bolmut) merupakan fasilitas pelayanan kesehatan tipe Kelas D milik Pemerintah Kabupaten Bolaang Mongondow Utara.' }}
+                    </p>
+                    <div class="row g-4 mt-2">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center gap-3">
+                                <div style="width: 50px; height: 50px; border-radius: 15px; background: var(--accent); color: var(--secondary-dark); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                    <i class="bi bi-heart-pulse-fill"></i>
+                                </div>
+                                <div>
+                                    <h4 class="mb-0 fw-bold">{{ $settings['stat_1_value'] ?? '12.062' }}</h4>
+                                    <span class="text-muted small fw-medium">{{ $settings['stat_1_label'] ?? 'Pasien Dilayani (2025)' }}</span>
+                                </div>
+                            </div>
                         </div>
-                        <div style="width: 1px; background: rgba(255,255,255,0.15); align-self: stretch;"></div>
-                        <div class="hero-stat">
-                            <h3>24/7</h3>
-                            <p>IGD & Rawat Inap</p>
-                        </div>
-                        <div style="width: 1px; background: rgba(255,255,255,0.15); align-self: stretch;"></div>
-                        <div class="hero-stat">
-                            <h3>Kelas D</h3>
-                            <p>RSU Daerah</p>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center gap-3">
+                                <div style="width: 50px; height: 50px; border-radius: 15px; background: #e0f2fe; color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                    <i class="bi bi-award-fill"></i>
+                                </div>
+                                <div>
+                                    <h4 class="mb-0 fw-bold">{{ $settings['stat_2_value'] ?? 'Lulus Perdana' }}</h4>
+                                    <span class="text-muted small fw-medium">{{ $settings['stat_2_label'] ?? 'Status Akreditasi KARS' }}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visi, Misi & Motto -->
+    <section class="welcome-section position-relative" style="background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%); color: white; padding: 100px 0;">
+        <!-- Wave Top -->
+        <div class="position-absolute top-0 start-0 w-100 overflow-hidden" style="line-height: 0;">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="position: relative; display: block; width: calc(100% + 1.3px); height: 50px; transform: rotate(180deg);">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
+            </svg>
+        </div>
+
+        <div class="container py-4" style="position: relative; z-index: 2;">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0" data-aos="fade-right">
+                    <span class="badge bg-white fw-bold px-3 py-2 rounded-pill mb-3 shadow-sm" style="color: #0d9488;">Arah & Tujuan</span>
+                    <h2 class="fw-bold mb-4" style="font-size: 2.5rem; font-family: 'Outfit', sans-serif;">Visi Kami</h2>
+                    <p class="lead fw-medium" style="line-height: 1.8; color: rgba(255,255,255,0.9);">
+                        "{{ $settings['visi'] ?? 'Terwujudnya Rumah Sakit Umum Daerah Kabupaten Bolaang Mongondow Utara Yang Bermutu, Nyaman dan Menjadi Idaman Masyarakat' }}"
+                    </p>
+                </div>
+                <div class="col-lg-5 offset-lg-1" data-aos="fade-left">
+                    <div class="p-4" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 30px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                        <h4 class="fw-bold mb-4 text-center" style="font-family: 'Outfit', sans-serif; color: #ccfbf1;">Motto Pelayanan: "{{ $settings['motto'] ?? 'SERASI' }}"</h4>
+                        <ul class="list-unstyled mb-0" style="font-size: 0.95rem; line-height: 1.6; text-align: left;">
+                            <li class="mb-3 d-flex"><strong class="fs-5 me-3" style="color: #5eead4;">S</strong> <span><strong>Segera</strong>, Pelayanan yang tanggap, cepat, bermutu dan professional.</span></li>
+                            <li class="mb-3 d-flex"><strong class="fs-5 me-3" style="color: #5eead4;">E</strong> <span><strong>Efektif</strong>, Memberikan pelayanan sesuai dengan prosedur Rumah Sakit Umum Daerah.</span></li>
+                            <li class="mb-3 d-flex"><strong class="fs-5 me-3" style="color: #5eead4;">R</strong> <span><strong>Ramah</strong>, Pelayanan secara tulus dengan sapa, salam dan senyum.</span></li>
+                            <li class="mb-3 d-flex"><strong class="fs-5 me-3" style="color: #5eead4;">A</strong> <span><strong>Aman</strong>, Pelayanan yang memberikan rasa aman secara fisik, mental dan emosional.</span></li>
+                            <li class="mb-3 d-flex"><strong class="fs-5 me-3" style="color: #5eead4;">S</strong> <span><strong>Simpatik</strong>, Pelayanan diberikan dengan rasa empatik.</span></li>
+                            <li class="mb-0 d-flex"><strong class="fs-5 me-3" style="color: #5eead4;">I</strong> <span><strong>Indah</strong>, Pelayanan dengan lingkungan yang asri, bersih dan tertib.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-3" data-aos="fade-up">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="fw-bold" style="font-family: 'Outfit', sans-serif;">Misi Kami</h2>
+                    <div style="width: 60px; height: 4px; background: #ccfbf1; margin: 15px auto; border-radius: 2px;"></div>
+                </div>
+                
+                @php
+                    $misiDefaults = [
+                        ['icon' => 'bi-building-up', 'title' => 'Lingkungan Kerja Kondusif', 'desc' => 'Meningkatkan lingkungan kerja yang kondusif bagi timbulnya profesionalisme dalam pelayanan kesehatan.'],
+                        ['icon' => 'bi-hospital', 'title' => 'Pelayanan Rujukan', 'desc' => 'Meningkatkan kemampuan pelayanan kesehatan rujukan bagi masyarakat.'],
+                        ['icon' => 'bi-award-fill', 'title' => 'Kualitas SDM & Akreditasi', 'desc' => 'Meningkatkan kualitas sumber daya manusia dan akreditas rumah sakit.'],
+                        ['icon' => 'bi-pc-display', 'title' => 'Sistem Informasi (SIM-RS)', 'desc' => 'Meningkatkan sistem informasi manajemen rumah sakit (SIM-RS).'],
+                        ['icon' => 'bi-graph-up-arrow', 'title' => 'Manajemen Efisien', 'desc' => 'Mengembangkan manajemen rumah sakit yang efisien, transparan dan akuntabel.'],
+                        ['icon' => 'bi-person-hearts', 'title' => 'Peningkatan KIA', 'desc' => 'Meningkatkan peningkatan KIA untuk mempercepat penurunan AKI dan AKB.'],
+                        ['icon' => 'bi-emoji-smile-fill', 'title' => 'Kesejahteraan Karyawan', 'desc' => 'Meningkatkan kesejahteraan karyawan rumah sakit.'],
+                    ];
+                @endphp
+                @for($i = 0; $i < count($misiDefaults); $i++)
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="h-100 p-4" style="background: white; border-radius: 20px; color: #0f172a; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+                        <div style="width: 50px; height: 50px; border-radius: 12px; background: #f0fdfa; color: #0d9488; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px;">
+                            <i class="bi {{ $settings['misi_'.($i+1).'_icon'] ?? $misiDefaults[$i]['icon'] }}"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">{{ $settings['misi_'.($i+1).'_title'] ?? $misiDefaults[$i]['title'] }}</h5>
+                        <p class="text-muted mb-0">{{ $settings['misi_'.($i+1).'_desc'] ?? $misiDefaults[$i]['desc'] }}</p>
+                    </div>
+                </div>
+                @endfor
             </div>
         </div>
         
-        <!-- Wave Separator -->
-        <div class="wave-bottom">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        <!-- Wave Bottom -->
+        <div class="position-absolute bottom-0 start-0 w-100 overflow-hidden" style="line-height: 0;">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="position: relative; display: block; width: calc(100% + 1.3px); height: 50px;">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#f8fafc"></path>
             </svg>
-        </div>
-    </section>
-
-    <!-- Pencarian Pintar (Smart Search Widget) -->
-    <div class="container mb-5" style="position: relative; z-index: 15;" data-aos="fade-up">
-        <div class="search-widget flex-column flex-md-row">
-            <div class="flex-grow-1">
-                <input type="text" id="mainSearchInput" placeholder="🔍 Cari nama dokter spesialis atau layanan...">
-            </div>
-            <div class="flex-grow-1">
-                <select id="mainSearchSelect">
-                    <option value="">Semua Poliklinik</option>
-                    @foreach($departments as $dept)
-                        <option value="{{ $dept->name }}">{{ $dept->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <button id="mainSearchBtn" class="btn-search"><i class="bi bi-search me-2"></i>Temukan Jadwal</button>
-        </div>
-    </div>
-
-    <!-- Layanan Cepat -->
-    <div class="container pt-4" style="position: relative; z-index: 10;">
-        <div class="row justify-content-center g-4">
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <a href="{{ route('frontend.register') }}" class="quick-link-card">
-                    <div class="icon-wrapper icon-blue"><i class="bi bi-laptop"></i></div>
-                    <h4>Pendaftaran Online</h4>
-                    <p>Ambil tiket antrean dari rumah</p>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <a href="#jadwal" class="quick-link-card">
-                    <div class="icon-wrapper icon-green"><i class="bi bi-file-medical"></i></div>
-                    <h4>Jadwal Dokter</h4>
-                    <p>Cek jam praktek spesialis</p>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <a href="#kamar" class="quick-link-card">
-                    <div class="icon-wrapper icon-blue"><i class="bi bi-hospital"></i></div>
-                    <h4>Info Kamar</h4>
-                    <p>Ketersediaan ruang rawat inap</p>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <a href="tel:119" class="quick-link-card">
-                    <div class="icon-wrapper" style="background: #fee2e2; color: #ef4444;"><i class="bi bi-truck-front-fill"></i></div>
-                    <h4>Layanan Gawat Darurat</h4>
-                    <p>Ambulans Siaga 24 Jam</p>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Alur Pelayanan Pasien -->
-    <section class="welcome-section pb-0" style="background: var(--light);">
-        <div class="container" data-aos="fade-up">
-            <div class="section-header text-center mb-5">
-                <span class="section-subtitle">Patient Journey</span>
-                <h2 class="section-title">Alur Pelayanan Modern</h2>
-            </div>
-            
-            <div class="d-none d-lg-block">
-                <div class="timeline-box">
-                    <div class="timeline-step">
-                        <i class="bi bi-phone"></i>
-                        <span>1. Daftar<br>Online</span>
-                    </div>
-                    <div class="timeline-step">
-                        <i class="bi bi-qr-code-scan"></i>
-                        <span>2. Scan<br>Barcode</span>
-                    </div>
-                    <div class="timeline-step">
-                        <i class="bi bi-heart-pulse"></i>
-                        <span>3. Pemeriksaan<br>Medis</span>
-                    </div>
-                    <div class="timeline-step">
-                        <i class="bi bi-capsule"></i>
-                        <span>4. Ambil<br>Obat</span>
-                    </div>
-                    <div class="timeline-step">
-                        <i class="bi bi-emoji-smile"></i>
-                        <span>5. Pulang<br>Sehat</span>
-                    </div>
-                </div>
-            </div>
-            <div class="d-lg-none mt-4 text-center">
-                <p class="text-muted" style="line-height: 1.8;">Proses pendaftaran dari awal hingga pengambilan obat dapat dilakukan dengan sangat mudah melalui sistem antrean terintegrasi kami.</p>
-            </div>
-        </div>
-    </section>
-
-    
-
-    <!-- Layanan Unggulan -->
-    <section id="layanan" style="padding: 100px 0; background: #f8fafc;">
-        <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-subtitle">Fasilitas & Layanan Utama</span>
-                <h2 class="section-title mb-3">Layanan Unggulan Kami</h2>
-                <p class="text-muted mx-auto" style="max-width: 700px; font-size: 1.1rem;">Berkomitmen memberikan perawatan holistik melalui fasilitas medis modern yang dirancang khusus untuk mempercepat proses pemulihan Anda.</p>
-            </div>
-            
-            <div class="row g-4 mt-2">
-                @php
-                    $layananDefaults = [
-                        ['icon' => 'bi-heart-pulse', 'title' => 'Jantung Terpadu', 'desc' => 'Penanganan penyakit jantung komprehensif didukung Cath Lab modern dan tim Kardiolog berpengalaman.', 'gradient' => 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)', 'color' => 'text-primary'],
-                        ['icon' => 'bi-bandaid', 'title' => 'Trauma Center', 'desc' => 'Penanganan kecelakaan dan darurat bedah 24 jam dengan respons cepat serta fasilitas operasi dan IGD darurat lengkap.', 'gradient' => 'linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)', 'color' => 'text-success'],
-                        ['icon' => 'bi-person-hearts', 'title' => 'Klinik Ibu & Anak', 'desc' => 'Pusat kesehatan ibu hamil, bersalin, dan perawatan neonatal dengan fasilitas NICU dan PICU mutakhir.', 'gradient' => 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)', 'color' => 'text-warning'],
-                    ];
-                @endphp
-                @for($i = 0; $i < 3; $i++)
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ ($i+1) * 100 }}">
-                    <div style="background: white; border-radius: 25px; padding: 40px; box-shadow: var(--shadow-sm); height: 100%; transition: all 0.4s ease; border: 1px solid var(--border);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-lg)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)';">
-                        <div style="width: 70px; height: 70px; background: {{ $layananDefaults[$i]['gradient'] }}; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
-                            <i class="bi {{ $settings['layanan_'.($i+1).'_icon'] ?? $layananDefaults[$i]['icon'] }} {{ $layananDefaults[$i]['color'] }} fs-2"></i>
-                        </div>
-                        <h4 style="font-family: 'Outfit', sans-serif; font-weight: 800; color: #0f172a; margin-bottom: 15px;">{{ $settings['layanan_'.($i+1).'_title'] ?? $layananDefaults[$i]['title'] }}</h4>
-                        <p class="text-muted" style="line-height: 1.7; margin-bottom: 0;">{{ $settings['layanan_'.($i+1).'_desc'] ?? $layananDefaults[$i]['desc'] }}</p>
-                    </div>
-                </div>
-                @endfor
-            </div>
-        </div>
-    </section>
-
-    <!-- Info Kamar (Live) -->
-    <section id="kamar" class="bed-section">
-        <div class="container" style="position: relative; z-index: 2;">
-            <div class="section-header text-center">
-                <span class="section-subtitle text-white">Real-Time Data SIMRS</span>
-                <h2 class="section-title text-white mb-3">Ketersediaan Kamar Rawat Inap</h2>
-                <p class="text-white opacity-75 mx-auto" style="max-width: 600px;">Data di bawah ini tersinkronisasi otomatis dengan sistem sentral administrasi rumah sakit kami. Transparansi adalah komitmen kami.</p>
-            </div>
-            
-            <div class="row g-4 justify-content-center">
-                @forelse($wards as $ward)
-                    <div class="col-12 mb-2">
-                        <div class="text-center text-white mb-2">
-                            <h4 class="fw-bold mb-0 text-white"><i class="bi bi-building me-2"></i>{{ $ward->name }}</h4>
-                            <small class="opacity-75">{{ $ward->building }} - {{ $ward->floor }}</small>
-                        </div>
-                        <div class="row g-3 justify-content-center">
-                            @foreach($ward->rooms as $room)
-                            <div class="col-lg-2 col-md-3 col-6">
-                                <div class="bed-card {{ $room->available_beds > 0 ? 'glow-green' : 'glow-red' }} h-100">
-                                    <div class="badge bg-white text-dark mb-3 fw-bold rounded-pill">{{ $room->room_class }}</div>
-                                    <div class="bed-number" style="font-size: 2.5rem;">{{ str_pad($room->available_beds, 2, '0', STR_PAD_LEFT) }}</div>
-                                    <small class="d-block text-white opacity-75 mb-2">dari {{ $room->total_beds }} bed</small>
-                                    
-                                    @if($room->available_beds == 0)
-                                        <div class="text-danger fw-bold mt-auto"><i class="bi bi-x-circle-fill me-1"></i> Penuh</div>
-                                    @else
-                                        <div class="text-success fw-bold mt-auto"><i class="bi bi-check-circle-fill me-1"></i> Kosong</div>
-                                    @endif
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                @empty
-                    <div class="col-12 text-center text-white opacity-50 py-5">
-                        <i class="bi bi-hospital fs-1 d-block mb-3"></i>
-                        <h5>Data kamar sedang dalam pemeliharaan.</h5>
-                    </div>
-                @endforelse
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Jadwal Pelayanan dipindahkan ke halaman terpisah (jadwal.blade.php) -->
-
-
-    <!-- Galeri Foto RSUD -->
-    <section id="galeri" class="welcome-section" style="background: var(--light);">
-        <div class="container" data-aos="fade-up">
-            <div class="section-header text-center">
-                <span class="section-subtitle">Dokumentasi Kegiatan</span>
-                <h2 class="section-title">Galeri Foto RSUD</h2>
-            </div>
-            <div class="row g-3">
-                @php
-                    $galeriDefaults = [
-                        ['src' => 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=600&auto=format&fit=crop', 'caption' => 'Gedung Utama RSUD'],
-                        ['src' => 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=600&auto=format&fit=crop', 'caption' => 'Ruang Perawatan Modern'],
-                        ['src' => 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?q=80&w=600&auto=format&fit=crop', 'caption' => 'Laboratorium Klinik'],
-                        ['src' => 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=600&auto=format&fit=crop', 'caption' => 'Unit Gawat Darurat'],
-                        ['src' => 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=600&auto=format&fit=crop', 'caption' => 'Pelayanan Farmasi'],
-                        ['src' => 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?q=80&w=600&auto=format&fit=crop', 'caption' => 'Tim Medis Profesional'],
-                    ];
-                @endphp
-                @for($idx = 0; $idx < 6; $idx++)
-                @php
-                    $settingIdx = $idx + 1;
-                    $imgSrc = isset($settings['galeri_'.$settingIdx.'_img']) && \Illuminate\Support\Facades\Storage::disk('public')->exists($settings['galeri_'.$settingIdx.'_img']) 
-                                ? asset('storage/' . $settings['galeri_'.$settingIdx.'_img']) 
-                                : $galeriDefaults[$idx]['src'];
-                    $caption = $settings['galeri_'.$settingIdx.'_caption'] ?? $galeriDefaults[$idx]['caption'];
-                @endphp
-                <div class="{{ $idx < 2 ? 'col-lg-6' : 'col-lg-3' }} col-md-6" data-aos="fade-up" data-aos-delay="{{ $idx * 80 }}">
-                    <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; cursor: pointer; height: {{ $idx < 2 ? '320px' : '200px' }};" onmouseover="this.querySelector('.galeri-overlay').style.opacity='1';" onmouseout="this.querySelector('.galeri-overlay').style.opacity='0';">
-                        <img src="{{ $imgSrc }}" alt="{{ $caption }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.08)';" onmouseout="this.style.transform='scale(1)';">
-                        <div class="galeri-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); opacity: 0; transition: 0.3s;">
-                            <span style="color: white; font-weight: 700; font-size: 0.95rem;">{{ $caption }}</span>
-                        </div>
-                    </div>
-                </div>
-                @endfor
-            </div>
-        </div>
-    </section>
-
-    <!-- Instagram Feed Section -->
-    <section class="welcome-section" style="background: #fafafa; padding-top: 60px; padding-bottom: 60px;">
-        <div class="container" data-aos="fade-up">
-            <div class="section-header text-center mb-4">
-                <span class="section-subtitle" style="color: #e1306c; font-weight: 700;"><i class="bi bi-instagram me-2"></i>@officialrsudbolmongutara</span>
-                <h2 class="section-title">Instagram Feed Kami</h2>
-                <p class="text-muted mx-auto mt-3" style="max-width: 600px;">Dapatkan informasi kesehatan terbaru, jadwal pelayanan, dan kegiatan rumah sakit langsung dari genggaman Anda.</p>
-            </div>
-            
-            <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
-            <script src="https://elfsightcdn.com/platform.js" async></script>
-            <div class="elfsight-app-b712f345-8273-42a6-a405-bf076ce11fbd" data-elfsight-app-lazy></div>
-            
-        </div>
-    </section>
-
-    <!-- Pengaduan Masyarakat -->
-    <section id="pengaduan" class="welcome-section position-relative" style="background: linear-gradient(135deg, var(--dark) 0%, #1e3a5f 100%); color: white;">
-        <div class="container" data-aos="fade-up">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <span style="color: #5eead4; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Layanan Pengaduan</span>
-                    <h2 class="fw-bold mt-2 mb-4" style="font-family: 'Outfit', sans-serif; font-size: 2.4rem; color: white;">Suara Anda, <br>Perbaikan Kami</h2>
-                    <p style="color: rgba(255,255,255,0.6); line-height: 1.8; font-size: 1rem;">Kami sangat menghargai masukan, kritik, dan saran dari masyarakat. Sampaikan pengaduan Anda dan kami akan merespon dalam waktu 1×24 jam kerja.</p>
-                    <div class="d-flex flex-column gap-3 mt-4">
-                        <div class="d-flex align-items-center gap-3">
-                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(94, 234, 212, 0.15); display: flex; align-items: center; justify-content: center;"><i class="bi bi-shield-check" style="color: #5eead4; font-size: 1.2rem;"></i></div>
-                            <span style="color: rgba(255,255,255,0.8); font-weight: 500;">Dijamin kerahasiaannya</span>
-                        </div>
-                        <div class="d-flex align-items-center gap-3">
-                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(94, 234, 212, 0.15); display: flex; align-items: center; justify-content: center;"><i class="bi bi-clock-history" style="color: #5eead4; font-size: 1.2rem;"></i></div>
-                            <span style="color: rgba(255,255,255,0.8); font-weight: 500;">Respon dalam 1×24 jam kerja</span>
-                        </div>
-                        <div class="d-flex align-items-center gap-3">
-                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(94, 234, 212, 0.15); display: flex; align-items: center; justify-content: center;"><i class="bi bi-graph-up-arrow" style="color: #5eead4; font-size: 1.2rem;"></i></div>
-                            <span style="color: rgba(255,255,255,0.8); font-weight: 500;">Tindak lanjut transparan</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 offset-lg-1">
-                    <div style="background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 36px;">
-                        <h5 class="fw-bold mb-4" style="color: white;">Kirim Pengaduan</h5>
-                        <div id="pengaduanSuccess" style="display:none;" class="alert border-0 mb-4" role="alert" style="background: rgba(45,212,191,0.15); color: #5eead4; border-radius: 14px;">
-                            <i class="bi bi-check-circle-fill me-2"></i> <strong>Berhasil!</strong> Pengaduan Anda telah kami terima dan akan segera ditindaklanjuti.
-                        </div>
-                        <form id="formPengaduan">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <div class="mb-3">
-                                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" required style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
-                            </div>
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-6">
-                                    <input type="email" name="email" class="form-control" placeholder="Email" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="tel" name="phone" class="form-control" placeholder="No. Telepon" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <select name="category" class="form-select" required style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;">
-                                    <option value="" style="color: #333;">Kategori Pengaduan</option>
-                                    <option value="Pelayanan Medis" style="color: #333;">Pelayanan Medis</option>
-                                    <option value="Fasilitas & Sarana" style="color: #333;">Fasilitas & Sarana</option>
-                                    <option value="Administrasi" style="color: #333;">Administrasi</option>
-                                    <option value="Lainnya" style="color: #333;">Lainnya</option>
-                                </select>
-                            </div>
-                            <div class="mb-4">
-                                <textarea name="message" class="form-control" rows="4" placeholder="Isi pengaduan Anda secara detail..." required style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: white; padding: 14px 18px; border-radius: 12px;"></textarea>
-                            </div>
-                            <div id="pengaduanError" style="display:none;" class="alert alert-danger border-0 mb-3" style="border-radius: 12px;"></div>
-                            <button type="submit" id="btnKirimPengaduan" class="btn w-100 fw-bold py-3" style="background: linear-gradient(135deg, #0d9488, #2dd4bf); color: white; border: none; border-radius: 12px; font-size: 1rem;">
-                                <i class="bi bi-send me-2"></i> Kirim Pengaduan
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Asuransi & Mitra (Marquee) -->
-    <div class="partner-scroll">
-        <div class="partner-scroll-inner">
-            <h5 class="d-inline mx-4 fw-bold text-muted">BPJS Kesehatan</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Jasa Raharja</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Mandiri Inhealth</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Admedika</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Asuransi Sinar Mas</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Allianz</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">BPJS Ketenagakerjaan</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Prudential</h5>
-            
-            <h5 class="d-inline mx-4 fw-bold text-muted">BPJS Kesehatan</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Jasa Raharja</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Mandiri Inhealth</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Admedika</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Asuransi Sinar Mas</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Allianz</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">BPJS Ketenagakerjaan</h5>
-            <h5 class="d-inline mx-4 fw-bold text-muted">Prudential</h5>
-        </div>
-    </div>
-
-    <!-- Location / Map Section -->
-    <section class="bg-light py-5">
-        <div class="container">
-            <div class="text-center mb-4">
-                <span class="section-subtitle">Lokasi Kami</span>
-                <h2 class="section-title mb-3">Rumah Sakit Umum Daerah Bolaang Mongondow Utara</h2>
-            </div>
-            <div class="card border-0 shadow-lg rounded-4 overflow-hidden mb-5">
-                <div class="card-body p-0">
-                    <iframe 
-                        src="https://maps.google.com/maps?q=RSUD%20Bolaang%20Mongondow%20Utara&t=&z=14&ie=UTF8&iwloc=&output=embed" 
-                        width="100%" 
-                        height="450" 
-                        style="border:0; display: block;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -687,10 +414,10 @@
                 <div class="col-lg-2 col-md-4">
                     <h5 class="footer-title">Pintasan</h5>
                     <div class="footer-links">
-                        <a href="#profil">Tentang Kami</a>
-                        <a href="#layanan">Layanan Medis</a>
+                        <a href="{{ url('/') }}#profil">Tentang Kami</a>
+                        <a href="{{ url('/') }}#layanan">Layanan Medis</a>
                         <a href="{{ route('frontend.jadwal') }}">Jadwal Dokter</a>
-                        <a href="#kamar">Informasi Kamar</a>
+                        <a href="{{ url('/') }}#kamar">Informasi Kamar</a>
                         <a href="javascript:void(0)" onclick="alert('Saat ini belum ada lowongan karir yang tersedia. Terima kasih atas minat Anda.')">Karir</a>
                     </div>
                 </div>
@@ -700,7 +427,7 @@
                         <a href="{{ route('frontend.register') }}">Pendaftaran Mandiri</a>
                         <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalSPO">Panduan Rawat Inap</a>
                         <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalTarif">Tarif Layanan BPJS</a>
-                        <a href="#pengaduan">Saran & Pengaduan</a>
+                        <a href="{{ url('/') }}#pengaduan">Saran & Pengaduan</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4">

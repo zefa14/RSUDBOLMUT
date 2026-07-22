@@ -297,7 +297,7 @@
                         <a href="{{ route('frontend.register') }}" class="btn btn-lg fw-bold text-white shadow-sm" style="background: var(--primary); border: none; padding: 14px 32px; border-radius: 50px; font-size: 0.95rem;">
                             <i class="bi bi-calendar-check me-2"></i>Daftar Online
                         </a>
-                        <a href="#jadwal" class="btn btn-lg fw-bold" style="padding: 14px 32px; border-radius: 50px; backdrop-filter: blur(5px); border: 1.5px solid rgba(255,255,255,0.3); color: white; font-size: 0.95rem;">
+                        <a href="{{ route('frontend.jadwal') }}" class="btn btn-lg fw-bold" style="padding: 14px 32px; border-radius: 50px; backdrop-filter: blur(5px); border: 1.5px solid rgba(255,255,255,0.3); color: white; font-size: 0.95rem;">
                             Lihat Jadwal <i class="bi bi-arrow-right ms-2"></i>
                         </a>
                     </div>
@@ -359,7 +359,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <a href="#jadwal" class="quick-link-card">
+                <a href="{{ route('frontend.jadwal') }}" class="quick-link-card">
                     <div class="icon-wrapper icon-green"><i class="bi bi-file-medical"></i></div>
                     <h4>Jadwal Dokter</h4>
                     <p>Cek jam praktek spesialis</p>
@@ -566,7 +566,7 @@
                 <div class="col-lg-2 col-md-4">
                     <h5 class="footer-title">Pintasan</h5>
                     <div class="footer-links">
-                        <a href="#profil">Tentang Kami</a>
+                        <a href="{{ route('frontend.about') }}">Tentang Kami</a>
                         <a href="#layanan">Layanan Medis</a>
                         <a href="{{ route('frontend.jadwal') }}">Jadwal Dokter</a>
                         <a href="#kamar">Informasi Kamar</a>

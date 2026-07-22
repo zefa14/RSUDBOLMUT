@@ -143,7 +143,7 @@
 
             <div class="d-flex gap-2 mt-4">
                 <button onclick="window.print()" class="btn btn-outline-secondary w-50 btn-action"><i class="bi bi-printer me-1"></i> Cetak</button>
-                <a href="{{ route('home') }}" class="btn btn-primary w-50 btn-action" style="background-color: var(--rsud-blue);"><i class="bi bi-house me-1"></i> Beranda</a>
+                <a href="{{ route('frontend.home') }}" class="btn btn-primary w-50 btn-action" style="background-color: var(--rsud-blue);"><i class="bi bi-house me-1"></i> Beranda</a>
             </div>
         </div>
     </div>

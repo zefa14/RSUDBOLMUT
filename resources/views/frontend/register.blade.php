@@ -247,7 +247,7 @@
     <!-- ─── Navbar ─────────────────────────────────────── -->
     <nav class="navbar-custom">
         <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand d-flex align-items-center text-decoration-none" href="{{ route('home') }}">
+            <a class="navbar-brand d-flex align-items-center text-decoration-none" href="{{ route('frontend.home') }}">
                 <div style="width: 42px; height: 46px; background: rgba(255,255,255,0.2); border-radius: 8px; margin-right: 12px; display: flex; align-items: center; justify-content: center;">
                     <i class="bi bi-hospital text-white fs-4"></i>
                 </div>
@@ -256,7 +256,7 @@
                     <div class="brand-subtitle">Pendaftaran Online Pasien Mandiri</div>
                 </div>
             </a>
-            <a href="{{ route('home') }}" class="btn btn-back btn-sm">
+            <a href="{{ route('frontend.home') }}" class="btn btn-back btn-sm">
                 <i class="bi bi-arrow-left me-1"></i> Kembali ke Beranda
             </a>
         </div>

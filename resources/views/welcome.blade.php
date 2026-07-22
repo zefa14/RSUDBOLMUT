@@ -87,7 +87,7 @@
                     </li>
                     @auth
                         <li class="nav-item ms-3">
-                            <a class="btn btn-primary rounded-pill px-4" style="background-color: #0f766e; border: none;" href="{{ route('home') }}">Dashboard</a>
+                            <a class="btn btn-primary rounded-pill px-4" style="background-color: #0f766e; border: none;" href="{{ route('frontend.home') }}">Dashboard</a>
                         </li>
                     @else
                         <li class="nav-item ms-3">
